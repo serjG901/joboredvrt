@@ -43,6 +43,7 @@ interface IFiltervacancies {
   setPayment_to: (payment_to: string) => void;
   catalog: ICatalog | null;
   setCatalog: (catalog: string) => void;
+  filterIsEmpty: boolean;
   catalogues: ICatalog[];
   loading: boolean;
   error: unknown;
@@ -59,6 +60,7 @@ export default function Filtervacancies({
   catalogues,
   catalog,
   setCatalog,
+  filterIsEmpty,
   loading,
   error,
   applyFilter,
@@ -71,10 +73,10 @@ export default function Filtervacancies({
           {filtervacancies.formName}
         </div>
         <button
-          className="filter-vacancies-header-formreset"
+          className={`filter-vacancies-header-formreset ${filterIsEmpty ? "" : "filter-vacancies-header-formreset_red"}`}
           onClick={handleResetForm}
         >
-          {filtervacancies.formResetText}
+          <div className="close">{filtervacancies.formResetText}<div className="close-icon">+</div></div>
         </button>
       </div>
 
@@ -104,7 +106,7 @@ export default function Filtervacancies({
             from: filtervacancies.placeholders.payment_from,
             to: filtervacancies.placeholders.payment_to,
           }}
-          step={1000}
+          step={10000}
         />
         <ButtonFormVacancies
           text={filtervacancies.buttontext}

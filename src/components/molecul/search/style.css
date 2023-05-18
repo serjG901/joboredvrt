@@ -1,7 +1,7 @@
 .search {
   width: 100%;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
@@ -21,14 +21,16 @@
 .search button:hover {
   background-color: #4369b1;
 }
-
+.search-icon {
+  display: inherit;
+}
 .search input {
   width: calc(100% - 83px);
   border: none;
   outline: none;
   font-weight: 400;
   font-size: 14px;
-  line-height: 21px;
+  padding: 0;
 }
 
 .search input::placeholder {

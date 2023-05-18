@@ -4,5 +4,5 @@ import Image from "./empty-search-image.svg";
 
 export default function EmptySearchData() {
   const text = useLanguageStore((state) => state.textes.emptyFavorites);
-  return <EmptySearch image={Image} text={text} />;
+  return <EmptySearch image={Image} text={text} hasLink={true}/>;
 }

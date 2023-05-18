@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./style.css";
+import SelectDownArrow from "./Down2.svg"
 interface ISelect {
   loading: boolean;
   loadingmessage: string;
@@ -69,6 +70,7 @@ export default function Select({
           );
         })}
       </select>
+      <img className="select-down-arrow" src={SelectDownArrow} alt={title}/>
     </div>
   );
 }

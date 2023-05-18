@@ -1,7 +1,7 @@
 import CardVacancyEmpty from "../../atom/card-vacancy-empty";
 import StarFavorite from "../../molecul/star-favorite";
 import CardVacancyDescription from "../../molecul/card-vacancy-description";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface ICardVacancy {
   vacancyId: number;
@@ -35,9 +35,8 @@ export default function CardVacancy({
   actionFavoriteStar,
   altFavorite,
 }: ICardVacancy) {
-  useLocation
   return (
-    <Link to={`../vacancies/${vacancyId}`} onClick={(event)=>console.log(event.target)}>
+    <Link to={`../vacancies/${vacancyId}`}>
       <CardVacancyEmpty>
         <CardVacancyDescription
           profession={profession}

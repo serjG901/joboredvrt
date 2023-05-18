@@ -180,6 +180,9 @@ interface VacanciesState {
   catalog: ICatalog | null;
   setCatalog: (catalog: string) => void;
 
+  filterIsEmpty: boolean;
+  setFilterIsEmpty: () => void;
+
   catalogues: ICatalog[];
   loadingCatalogues: boolean;
   errorCatalogues: unknown | null;
@@ -205,6 +208,7 @@ interface VacanciesState {
 
   vacancyPage: null | IVacancy;
   loadingVacancyPage: boolean;
+  cardsInVacancyPage: number;
   errorVacancyPage: null | unknown;
   getVacancyPageById: (id: number | string) => void;
 }
@@ -216,8 +220,6 @@ const useVacanciesStore = create<VacanciesState>()(
       loadingVacancies: false,
       errorVacancies: null,
       getVacancies: async () => {
-        if (get().keyword) return;
-        if (get().errorCatalogues) get().getCatalogues();
         set({ errorVacancies: null });
         set({ loadingVacancies: true });
         set({ vacancies: [] });
@@ -277,21 +279,44 @@ const useVacanciesStore = create<VacanciesState>()(
       },
 
       keyword: "",
-      setKeyword: (keyword) => set({ keyword }),
+      setKeyword: (keyword) => {
+        set({ keyword });
+        get().setFilterIsEmpty();
+      },
 
       payment_from: 0,
-      setPayment_from: (payment_from) => set({ payment_from: +payment_from }),
+      setPayment_from: (payment_from) => {
+        set({ payment_from: +payment_from });
+        get().setFilterIsEmpty();
+      },
 
       payment_to: 0,
-      setPayment_to: (payment_to) => set({ payment_to: +payment_to }),
+      setPayment_to: (payment_to) => {
+        set({ payment_to: +payment_to });
+        get().setFilterIsEmpty();
+      },
 
       order: "date",
 
       catalog: null,
-      setCatalog: (title_trimmed: string) =>
+      setCatalog: (title_trimmed: string) => {
         set({
           catalog: get().catalogues.find(
             (item: ICatalog) => item.title_trimmed === title_trimmed
+          ),
+        });
+        get().setFilterIsEmpty();
+      },
+
+      filterIsEmpty: true,
+
+      setFilterIsEmpty: () =>
+        set({
+          filterIsEmpty: !(
+            get().keyword ||
+            get().catalog ||
+            get().payment_from ||
+            get().payment_to
           ),
         }),
 
@@ -300,9 +325,9 @@ const useVacanciesStore = create<VacanciesState>()(
       errorCatalogues: null,
       applyFilter: () => {
         if (get().errorCatalogues) return;
-        const emptyFilter =
-          !get().catalog && !get().payment_from && !get().payment_to;
-        if (emptyFilter) return;
+        console.log(get().keyword, get().filterIsEmpty);
+        if (get().filterIsEmpty) return;
+        set({ pageActive: 0 });
         get().getVacancies();
       },
       resetFilter: () => {
@@ -312,6 +337,7 @@ const useVacanciesStore = create<VacanciesState>()(
           payment_to: 0,
           catalog: null,
         });
+        get().setFilterIsEmpty();
         get().getVacancies();
       },
 
@@ -406,6 +432,7 @@ const useVacanciesStore = create<VacanciesState>()(
 
       vacancyPage: null,
       loadingVacancyPage: false,
+      cardsInVacancyPage: 2,
       errorVacancyPage: null,
       getVacancyPageById: async (id) => {
         if (!id) set({ errorVacancyPage: "not found" });

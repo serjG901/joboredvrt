@@ -26,27 +26,23 @@ export default function VacanciesPage() {
   return (
     <div className="vacancies-page">
       <Filtervacanciesdata />
-      <div className="vacancies-page-pages">
-        <div className="vacancies-page-pages-cards">
-          <SearchVacanciesData />
-          {loading ? (
-            <CardsVacancyLoadingData />
-          ) : error ? (
-            <ErrorSearchData />
+      <SearchVacanciesData />
+      {loading ? (
+        <CardsVacancyLoadingData />
+      ) : error ? (
+        <ErrorSearchData />
+      ) : (
+        <div className="vacancies-page-cards">
+          {vacancies.length ? (
+            vacancies.map((vacancy: IVacancy) => (
+              <CardVacancyData key={vacancy.id} vacancy={vacancy} />
+            ))
           ) : (
-            <div className="vacancies-page-pages-cards-list">
-              {vacancies.length ? (
-                vacancies.map((vacancy: IVacancy) => (
-                  <CardVacancyData key={vacancy.id} vacancy={vacancy} />
-                ))
-              ) : (
-                <EmptySearchData />
-              )}
-            </div>
+            <EmptySearchData />
           )}
         </div>
-        <PaginateVacanciesData />
-      </div>
+      )}
+      <PaginateVacanciesData />
     </div>
   );
 }

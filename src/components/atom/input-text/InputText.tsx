@@ -35,7 +35,7 @@ export default function InputText({
 
   useEffect(() => {
     if (state !== value) setState(value);
-  }, [value, setState]);
+  }, [value]);
 
   return (
     <input

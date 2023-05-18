@@ -23,6 +23,23 @@
   border: 1px solid #eaebed;
   border-radius: 12px;
   text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.vacancy-page-card-rich p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+.vacancy-page-card-rich b {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+.vacancy-page-card-rich br:first-child {
+  display: none;
 }
 
 .vacancy-page-card-rich p:first-child {

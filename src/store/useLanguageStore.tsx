@@ -52,7 +52,7 @@ const textes: ITextes = {
     header: {
       projectName: "Jobored",
       links: [
-        { text: "Поиск вакансий", href: "/vacancies" },
+        { text: "Поиск Вакансий", href: "/vacancies" },
         { text: "Избранное", href: "/favorites" },
       ],
     },

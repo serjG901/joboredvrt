@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   display: contents;
 }

@@ -1,5 +1,9 @@
 .paginate {
     display: flex;
     gap: 8px;
-    margin-bottom: 44px;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    grid-area: paginate;
+    width: 100%;
+    justify-content: center;
 }

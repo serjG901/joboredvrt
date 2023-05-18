@@ -1,35 +1,28 @@
 .vacancies-page {
-  display: flex;
-  gap: 28px;
+  display: grid;
+  grid-template:
+    "filter search"
+    "filter cards"
+    "filter paginate"
+    / 315px 1fr;
+  gap: 16px 28px;
   width: 100%;
   justify-content: center;
 }
-.vacancies-page-pages {
-  width: calc(100% - 343px);
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-}
 @media screen and (max-width: 640px) {
   .vacancies-page {
-    flex-direction: column;
-    align-items: center;
-  }
-  .vacancies-page-pages {
+    grid-template:
+      "filter"
+      "search"
+      "cards"
+      "paginate" 
+      / 100%;
     width: 90%;
+    gap: 16px;
   }
 }
 
-.vacancies-page-pages-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  align-items: center;
-}
-
-.vacancies-page-pages-cards-list {
+.vacancies-page-cards {
   width: 100%;
   display: flex;
   flex-direction: column;

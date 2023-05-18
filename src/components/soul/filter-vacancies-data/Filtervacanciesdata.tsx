@@ -12,6 +12,7 @@ export default function Filtervacanciesdata() {
     catalogues,
     catalog,
     setCatalog,
+    filterIsEmpty,
     applyFilter,
     resetFilter,
     loading,
@@ -25,6 +26,7 @@ export default function Filtervacanciesdata() {
     state.catalogues,
     state.catalog,
     state.setCatalog,
+    state.filterIsEmpty,
     state.applyFilter,
     state.resetFilter,
     state.loadingCatalogues,
@@ -49,6 +51,7 @@ export default function Filtervacanciesdata() {
       catalogues={catalogues}
       catalog={catalog}
       setCatalog={setCatalog}
+      filterIsEmpty={filterIsEmpty}
       loading={loading}
       error={error}
       applyFilter={applyFilter}

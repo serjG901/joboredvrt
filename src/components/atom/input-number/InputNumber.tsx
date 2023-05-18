@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./style.css";
+import InputNumberUpArrow from "./input-number-up-arrow.svg";
 
 interface IInputNumber {
   value: string;
@@ -20,22 +21,39 @@ export default function InputNumber({
     setState(event.target.value);
   };
 
+  const handlePlus = () => {
+    setState((state) => +state + step + "");
+  };
+
+  const handleMinus = () => {
+    setState((state) => (+state < step ? 0 : +state - step) + "");
+  };
+
   useEffect(() => {
     setValue(state);
   }, [state, setValue]);
 
   useEffect(() => {
     if (state !== value) setState(value);
-  }, [value, setState]);
+  }, [value]);
 
   return (
-    <input
-      className="input-number"
-      type="number"
-      placeholder={placeholder}
-      value={state}
-      onChange={handleChange}
-      step={step}
-    />
+    <div className="input-number">
+      <input
+        type="number"
+        placeholder={placeholder}
+        value={state}
+        onChange={handleChange}
+        step={step}
+      />
+      <div className="input-number-arrows">
+        <div className="input-number-arrow-up" onClick={handlePlus}>
+          <img src={InputNumberUpArrow} title={`+${step}`} />
+        </div>
+        <div className="input-number-arrow-down" onClick={handleMinus}>
+          <img src={InputNumberUpArrow} title={`-${step}`} />
+        </div>
+      </div>
+    </div>
   );
 }

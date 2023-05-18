@@ -4,8 +4,8 @@ import SearchVacancies from "../../substance/search-vacancies";
 import "./style.css";
 
 export default function SearchVacanciesData() {
-  const [getVacancies, keyword, setKeyword] = useVacanciesStore((state) => [
-    state.getVacancies,
+  const [applyFilter, keyword, setKeyword] = useVacanciesStore((state) => [
+    state.applyFilter,
     state.keyword,
     state.setKeyword,
   ]);
@@ -18,7 +18,7 @@ export default function SearchVacanciesData() {
       setValue={setKeyword}
       placeholder={textes.placeholder}
       textSearchButton={textes.textButton}
-      action={getVacancies}
+      action={applyFilter}
     />
   );
 }

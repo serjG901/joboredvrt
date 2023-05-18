@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  position: relative;
 }
 
 .my-select label {
@@ -13,23 +14,35 @@
 }
 
 .my-select select {
+  font-family: "Inter";
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   align-items: center;
   height: 42px;
-  padding: 8px 12px;
+  padding: 11px 7px;
+  padding-right: 20px;
   border: 1px solid #d5d6dc;
   border-radius: 8px;
   width: 100%;
   cursor: pointer;
   background-color: #ffffff;
 }
-.my-select select option{
+.select-down-arrow {
+  position: absolute;
+  right: 2px;
+  top: 36px;
+  background-color: white;
+  padding-right: 10px;
+  pointer-events: none;
+}
+.my-select select option {
+  padding: 0;
   color: #232134;
 }
 
-.my-select select option[value=""]{
+.my-select select option[value=""] {
   color: #acadb9;
 }
 
