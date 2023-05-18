@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  background-color: white;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1116px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  .header-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

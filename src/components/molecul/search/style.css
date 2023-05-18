@@ -1,0 +1,36 @@
+.search {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search button {
+  padding: 4px 20px;
+  width: 83px;
+  height: 32px;
+  background-color: #5e96fc;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #4369b1;
+}
+
+.search input {
+  width: calc(100% - 83px);
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.search input::placeholder {
+  color: #acadb9;
+}

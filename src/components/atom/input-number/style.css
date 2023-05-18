@@ -1,0 +1,15 @@
+.input-number {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #d5d6dc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.input-number::placeholder {
+  color: #acadb9;
+}

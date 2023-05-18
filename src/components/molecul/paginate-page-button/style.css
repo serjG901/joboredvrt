@@ -1,0 +1,37 @@
+.paginate-page-button button {
+  box-sizing: border-box;
+  padding: 0px 8px;
+  min-width: 32px;
+  width: min-content;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #d5d6dc;
+  border-radius: 4px;
+  display: flex;
+  place-content: center;
+  cursor: pointer;
+  color: #232134;
+}
+
+.paginate-page-button button:hover {
+  border: 1px solid #5e96fc;
+}
+
+.paginate-page-button_active button {
+  background: #5e96fc;
+  border: 1px solid #5e96fc;
+  color: white;
+}
+
+.paginate-page-button_active button {
+  cursor: auto;
+}
+
+.paginate-page-button_disabled button:hover {
+  border: 1px solid #d5d6dc;
+  cursor: auto;
+}
+
+.paginate-page-button_active button:hover {
+  border: 1px solid #5e96fc;
+}

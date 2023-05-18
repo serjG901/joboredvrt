@@ -1,0 +1,22 @@
+.form-salary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.form-salary label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #232134;
+}
+
+.form-salary input[type="number"]::-webkit-inner-spin-button,
+.form-salary input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 32px;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.favorites {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  width: 90%;
+  max-width: 773px;
+}
+.favorites-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 44px;
+}

@@ -1,0 +1,126 @@
+import "./style.css";
+import Select from "../../atom/select";
+import FormSalary from "../../molecul/form-salary";
+import ButtonFormVacancies from "../../molecul/button-apply-filter";
+import { useState } from "react";
+import MyButton from "../../atom/my-button";
+import ArrowDown from "./arrow-down.svg";
+
+interface ICatalog {
+  key: number;
+  positions: {
+    id_parent: number;
+    key: number;
+    title: string;
+    title_rus: number;
+    url_rus: number;
+  }[];
+  title: string;
+  title_rus: string;
+  title_trimmed: string;
+  url_rus: string;
+}
+
+interface IFiltervacancies {
+  filtervacancies: {
+    formName: string;
+    formResetText: string;
+    catalogies: string;
+    payment: string;
+    placeholders: {
+      catalogies: string;
+      payment_from: string;
+      payment_to: string;
+    };
+    buttontext: string;
+    loadingmessage: string;
+    errormessage: string;
+  };
+  handleResetForm: () => void;
+  payment_from: number;
+  setPayment_from: (payment_from: string) => void;
+  payment_to: number;
+  setPayment_to: (payment_to: string) => void;
+  catalog: ICatalog | null;
+  setCatalog: (catalog: string) => void;
+  catalogues: ICatalog[];
+  loading: boolean;
+  error: unknown;
+  applyFilter: () => void;
+}
+
+export default function Filtervacancies({
+  filtervacancies,
+  handleResetForm,
+  payment_from,
+  setPayment_from,
+  payment_to,
+  setPayment_to,
+  catalogues,
+  catalog,
+  setCatalog,
+  loading,
+  error,
+  applyFilter,
+}: IFiltervacancies) {
+  const [show, setShow] = useState(true);
+  return (
+    <div className="filter-vacancies">
+      <div className="filter-vacancies-header">
+        <div className="filter-vacancies-header-formname">
+          {filtervacancies.formName}
+        </div>
+        <button
+          className="filter-vacancies-header-formreset"
+          onClick={handleResetForm}
+        >
+          {filtervacancies.formResetText}
+        </button>
+      </div>
+
+      <div
+        className={`filter-vacancies-form ${
+          show ? "" : "filter-vacancies-form_hide"
+        }`}
+      >
+        <Select
+          loading={loading}
+          loadingmessage={filtervacancies.loadingmessage}
+          error={error}
+          errormessage={filtervacancies.errormessage}
+          title={filtervacancies.catalogies}
+          options={catalogues.map((catalog) => catalog.title_trimmed)}
+          currentSelected={catalog ? catalog.title_trimmed : ""}
+          setSelected={setCatalog}
+          placeholder={filtervacancies.placeholders.catalogies}
+        />
+        <FormSalary
+          title={filtervacancies.payment}
+          payment_from={payment_from}
+          setPayment_from={setPayment_from}
+          payment_to={payment_to}
+          setPayment_to={setPayment_to}
+          placeholders={{
+            from: filtervacancies.placeholders.payment_from,
+            to: filtervacancies.placeholders.payment_to,
+          }}
+          step={1000}
+        />
+        <ButtonFormVacancies
+          text={filtervacancies.buttontext}
+          action={applyFilter}
+        />
+      </div>
+      <div
+        className={`filter-vacancies-is-open ${
+          show ? "" : "filter-vacancies-is-close"
+        }`}
+        onClick={() => setShow(!show)}
+      >
+        <MyButton>
+          <img src={ArrowDown} alt={show ? "hide filter" : "show filter"} />
+        </MyButton>
+      </div>
+    </div>
+  );
+}

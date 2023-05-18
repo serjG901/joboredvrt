@@ -1,0 +1,5 @@
+.paginate {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 44px;
+}

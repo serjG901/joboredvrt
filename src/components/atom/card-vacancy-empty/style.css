@@ -1,0 +1,24 @@
+a:has(.card-vacancy-empty) {
+  text-decoration: none;
+}
+.card-vacancy-empty {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 90px;
+  width: 100%;
+  min-height: 137px;
+  height: min-content;
+  background: #ffffff;
+  border: 1px solid #eaebed;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 640px) {
+  .card-vacancy-empty {
+    gap: 20px;
+  }
+}

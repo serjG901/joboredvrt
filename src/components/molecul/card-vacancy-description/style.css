@@ -1,0 +1,61 @@
+.card-vacancy-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-vacancy-description-profession {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #5e96fc;
+  text-align: left;
+  word-break: break-word;
+}
+
+.card-vacancy-description-payment-and-typeofwork {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+}
+
+.card-vacancy-description-payment-and-typeofwork-payment {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #232134;
+  text-align: left;
+}
+
+.card-vacancy-description-payment-and-typeofwork-point {
+  display: flex;
+  align-items: center;
+}
+
+.card-vacancy-description-payment-and-typeofwork-typeofwork {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #232134;
+  text-align: left;
+}
+
+.card-vacancy-description-town {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-vacancy-description-town-point {
+  display: flex;
+  align-items: center;
+}
+
+.card-vacancy-description-town-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #232134;
+}

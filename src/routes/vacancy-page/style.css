@@ -1,0 +1,30 @@
+.vacancy-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 90%;
+  max-width: 773px;
+  margin-bottom: 44px;
+}
+
+.vacancy-page-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vacancy-page-card-rich {
+  box-sizing: border-box;
+  padding: 24px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #eaebed;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.vacancy-page-card-rich p:first-child {
+  margin-block-start: 0;
+}

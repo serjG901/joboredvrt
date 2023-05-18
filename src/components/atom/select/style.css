@@ -1,0 +1,57 @@
+.my-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.my-select label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  height: 19px;
+}
+
+.my-select select {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: center;
+  height: 42px;
+  padding: 8px 12px;
+  border: 1px solid #d5d6dc;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+.my-select select option{
+  color: #232134;
+}
+
+.my-select select option[value=""]{
+  color: #acadb9;
+}
+
+select.my-select-loading {
+  cursor: wait;
+}
+
+select.my-select-error {
+  cursor: auto;
+  color: #9e3029;
+}
+
+select.my-select-loading {
+  animation: loading-select 3s linear infinite;
+  background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+}
+
+@keyframes loading-select {
+  from {
+    background-position-y: -19px;
+  }
+  to {
+    background-position-y: 19px;
+  }
+}

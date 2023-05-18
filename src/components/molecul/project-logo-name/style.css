@@ -1,0 +1,14 @@
+.project-logo-name {
+  display: flex;
+  height: 36px;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .project-logo-name {
+    position: static;
+  }
+}
