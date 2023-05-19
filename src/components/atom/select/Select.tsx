@@ -29,7 +29,7 @@ export default function Select({
     options = [];
     placeholder = loadingmessage;
   }
-  console.log("select:", error);
+
   if (error) {
     options = [];
     placeholder = errormessage;

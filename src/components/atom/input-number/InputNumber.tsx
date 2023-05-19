@@ -26,7 +26,10 @@ export default function InputNumber({
   };
 
   const handleMinus = () => {
-    setState((state) => (+state < step ? 0 : +state - step) + "");
+    setState((state) => {
+      const newState = +state < step ? 0 : +state - step;
+      return newState ? newState + "" : "";
+    });
   };
 
   useEffect(() => {
@@ -34,13 +37,13 @@ export default function InputNumber({
   }, [state, setValue]);
 
   useEffect(() => {
-    if (state !== value) setState(value);
+    if (state !== value) setState(value || "");
   }, [value]);
 
   return (
     <div className="input-number">
       <input
-        type="number"
+        type="text"
         placeholder={placeholder}
         value={state}
         onChange={handleChange}

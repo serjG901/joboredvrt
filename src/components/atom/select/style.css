@@ -27,13 +27,14 @@
   border-radius: 8px;
   width: 100%;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: transparent;
+  appearance: none;
 }
 .select-down-arrow {
   position: absolute;
   right: 2px;
   top: 36px;
-  background-color: white;
+  background-color: transparent;
   padding-right: 10px;
   pointer-events: none;
 }

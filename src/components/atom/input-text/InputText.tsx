@@ -39,6 +39,7 @@ export default function InputText({
 
   return (
     <input
+      className="input-text"
       type={type}
       placeholder={placeholder}
       value={state}

@@ -1,9 +1,9 @@
 .vacancy-page-card-loading div {
-  animation: card-vacancy-loading 3s linear infinite;
+  animation: vacancy-page-card-loading 3s linear infinite;
   background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
 }
 
-@keyframes card-vacancy-loading {
+@keyframes vacancy-page-card-loading {
   from {
     background-position-y: -157px;
   }
