@@ -5,16 +5,10 @@ a:has(.card-vacancy-empty) {
   display: flex;
   justify-content: space-between;
   padding: 24px;
-  gap: 90px;
+  gap: 20px;
   width: 100%;
   min-height: 137px;
   background-color: #ffffff;
   border: 1px solid #eaebed;
   border-radius: 12px;
-}
-
-@media screen and (max-width: 640px) {
-  .card-vacancy-empty {
-    gap: 20px;
-  }
 }

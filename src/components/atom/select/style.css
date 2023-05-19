@@ -14,14 +14,14 @@
 }
 
 .my-select select {
-  font-family: "Inter";
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   align-items: center;
   height: 42px;
-  padding: 11px 7px;
+  padding: 11px 9px;
   padding-right: 20px;
   border: 1px solid #d5d6dc;
   border-radius: 8px;

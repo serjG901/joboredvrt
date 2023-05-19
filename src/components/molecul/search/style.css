@@ -25,6 +25,7 @@
   display: inherit;
 }
 .search input {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   width: calc(100% - 83px);
   border: none;
   outline: none;
