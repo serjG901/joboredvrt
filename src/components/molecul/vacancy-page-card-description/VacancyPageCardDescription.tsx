@@ -4,6 +4,7 @@ import Point from "./point.svg";
 
 interface IVacancyPageCardDescription {
   profession: string;
+  firm_name: string;
   payment_from: number;
   payment_to: number;
   currency: string;
@@ -19,6 +20,7 @@ interface IVacancyPageCardDescription {
 
 export default function VacancyPageCardDescription({
   profession,
+  firm_name,
   payment_from,
   payment_to,
   currency,
@@ -59,7 +61,7 @@ export default function VacancyPageCardDescription({
         <div className="vacancy-page-card-description-town-point">
           <img src={TownPoint} alt={"point"} />
         </div>
-        <div className="vacancy-page-card-description-town-title">{townTitle}</div>
+        <div className="vacancy-page-card-description-town-title">{townTitle}, {firm_name}</div>
       </div>
     </div>
   );

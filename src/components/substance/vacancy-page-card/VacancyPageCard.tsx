@@ -4,6 +4,7 @@ import VacancyPageCardDescription from "../../molecul/vacancy-page-card-descript
 
 interface IVacancyPageCard {
   profession: string;
+  firm_name: string;
   payment_from: number;
   payment_to: number;
   currency: string;
@@ -22,6 +23,7 @@ interface IVacancyPageCard {
 
 export default function VacancyPageCard({
   profession,
+  firm_name,
   payment_from,
   payment_to,
   currency,
@@ -36,6 +38,7 @@ export default function VacancyPageCard({
     <VacancyPageCardEmpty>
       <VacancyPageCardDescription
         profession={profession}
+        firm_name={firm_name}
         payment_from={payment_from}
         payment_to={payment_to}
         currency={currency}

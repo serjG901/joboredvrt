@@ -1,6 +1,5 @@
 import useLanguageStore from "../../../store/useLanguageStore";
 import useVacanciesStore, { IVacancy } from "../../../store/useVacanciesStore";
-import { useCallback } from "react";
 import VacancyPageCard from "../../substance/vacancy-page-card";
 
 interface ICardVacancyData {
@@ -22,18 +21,16 @@ export default function CardVacancyData({ vacancy }: ICardVacancyData) {
       state.deleteFavoriteVacancyId,
     ]);
   const isFavorite = favoriteVacanciesIds.includes(vacancy.id);
-  const actionFavoriteStar = useCallback(
-    (event?: React.MouseEvent<HTMLButtonElement>) => {
-      event?.preventDefault();
-      isFavorite
-        ? deleteFavoriteVacancyId(vacancy.id)
-        : addFavoriteVacancyId(vacancy.id);
-    },
-    [isFavorite]
-  );
+  const actionFavoriteStar = (event?: React.MouseEvent<HTMLButtonElement>) => {
+    event?.preventDefault();
+    isFavorite
+      ? deleteFavoriteVacancyId(vacancy.id)
+      : addFavoriteVacancyId(vacancy.id);
+  };
   return (
     <VacancyPageCard
       profession={vacancy.profession}
+      firm_name={vacancy.firm_name}
       payment_from={vacancy.payment_from}
       payment_to={vacancy.payment_to}
       currency={vacancy.currency}

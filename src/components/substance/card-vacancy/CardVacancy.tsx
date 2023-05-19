@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 interface ICardVacancy {
   vacancyId: number;
   profession: string;
+  firm_name: string;
   payment_from: number;
   payment_to: number;
   currency: string;
@@ -25,6 +26,7 @@ interface ICardVacancy {
 export default function CardVacancy({
   vacancyId,
   profession,
+  firm_name,
   payment_from,
   payment_to,
   currency,
@@ -40,6 +42,7 @@ export default function CardVacancy({
       <CardVacancyEmpty>
         <CardVacancyDescription
           profession={profession}
+          firm_name={firm_name}
           payment_from={payment_from}
           payment_to={payment_to}
           currency={currency}

@@ -66,6 +66,7 @@ export default function Filtervacancies({
   applyFilter,
 }: IFiltervacancies) {
   const [show, setShow] = useState(true);
+  const handleShow = () => setShow(!show);
   return (
     <div className="filter-vacancies">
       <div className="filter-vacancies-header">
@@ -73,10 +74,15 @@ export default function Filtervacancies({
           {filtervacancies.formName}
         </div>
         <button
-          className={`filter-vacancies-header-formreset ${filterIsEmpty ? "" : "filter-vacancies-header-formreset_red"}`}
+          className={`filter-vacancies-header-formreset ${
+            filterIsEmpty ? "" : "filter-vacancies-header-formreset_red"
+          }`}
           onClick={handleResetForm}
         >
-          <div className="close">{filtervacancies.formResetText}<div className="close-icon">+</div></div>
+          <div className="close">
+            {filtervacancies.formResetText}
+            <div className="close-icon">+</div>
+          </div>
         </button>
       </div>
 
@@ -117,9 +123,8 @@ export default function Filtervacancies({
         className={`filter-vacancies-is-open ${
           show ? "" : "filter-vacancies-is-close"
         }`}
-        onClick={() => setShow(!show)}
       >
-        <MyButton>
+        <MyButton action={handleShow}>
           <img src={ArrowDown} alt={show ? "hide filter" : "show filter"} />
         </MyButton>
       </div>
