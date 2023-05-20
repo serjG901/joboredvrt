@@ -4,9 +4,22 @@
   height: 48px;
   background: #ffffff;
   padding: 8px 12px;
-  border: 1px solid #eaebed;
+  border: var(--search-default--border);
   border-radius: 8px;
   display: flex;
   align-items: center;
   grid-area: search;
+  outline: none;
+}
+
+.search-vacancies:hover {
+  border: var(--search-hover--border);
+}
+
+.search-vacancies:has(input:focus) {
+  border: var(--search-focus--border);
+}
+
+.search-vacancies:has(input:not([value=""]):not(:focus)) {
+  border: var(--search-filled--border);
 }
