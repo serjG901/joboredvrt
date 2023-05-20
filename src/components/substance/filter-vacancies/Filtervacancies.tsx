@@ -1,7 +1,7 @@
 import "./style.css";
-import Select from "../../atom/select";
+import MySelect from "../../atom/my-select";
 import FormSalary from "../../molecul/form-salary";
-import ButtonFormVacancies from "../../molecul/button-apply-filter";
+import ButtonApplyFilter from "../../molecul/button-apply-filter";
 import { useState } from "react";
 import MyButton from "../../atom/my-button";
 import ArrowDown from "./arrow-down.svg";
@@ -91,7 +91,7 @@ export default function Filtervacancies({
           show ? "" : "filter-vacancies-form_hide"
         }`}
       >
-        <Select
+        <MySelect
           loading={loading}
           loadingmessage={filtervacancies.loadingmessage}
           error={error}
@@ -101,6 +101,7 @@ export default function Filtervacancies({
           currentSelected={catalog ? catalog.title_trimmed : ""}
           setSelected={setCatalog}
           placeholder={filtervacancies.placeholders.catalogies}
+          dataElem="industry-select"
         />
         <FormSalary
           title={filtervacancies.payment}
@@ -114,9 +115,10 @@ export default function Filtervacancies({
           }}
           step={10000}
         />
-        <ButtonFormVacancies
+        <ButtonApplyFilter
           text={filtervacancies.buttontext}
           action={applyFilter}
+          dataElem="search-button"
         />
       </div>
       <div
