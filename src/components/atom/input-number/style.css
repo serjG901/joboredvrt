@@ -12,6 +12,8 @@
   border-radius: 8px;
   width: 100%;
   height: 42px;
+  outline: none;
+  border: var(--search-default--border);
 }
 
 .input-number input::placeholder {
@@ -50,4 +52,16 @@
 
 .input-number-arrow-down:hover {
   background-color: var(--color-gray-100);
+}
+
+.input-number input:hover {
+  border: var(--search-hover--border);
+}
+
+.input-number input:has(input:focus) {
+  border: var(--search-focus--border);
+}
+
+.input-number:has(input:not([value=""]):not(:focus)) input {
+  border: var(--search-filled--border);
 }
