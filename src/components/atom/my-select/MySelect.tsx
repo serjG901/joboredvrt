@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./style.css";
-import SelectDownArrow from "./Down2.svg"
+import SelectDownArrow from "./Down2.svg";
 interface ISelect {
   loading: boolean;
   loadingmessage: string;
@@ -11,6 +11,7 @@ interface ISelect {
   options: string[];
   setSelected: (selected: string) => void;
   placeholder: string;
+  dataElem?: string;
 }
 export default function Select({
   loading,
@@ -22,9 +23,11 @@ export default function Select({
   options,
   setSelected,
   placeholder,
+  dataElem,
 }: ISelect) {
   const [state, setState] = useState(currentSelected);
-
+  const [isInFocus, setIsInFocus] = useState(false);
+  console.log(currentSelected);
   if (loading) {
     options = [];
     placeholder = loadingmessage;
@@ -39,6 +42,13 @@ export default function Select({
     setState(e.target.value);
   };
 
+  const handleFocus = () => {
+    setIsInFocus(true);
+  };
+  const handleBlur = () => {
+    setIsInFocus(false);
+  };
+
   useEffect(() => {
     setSelected(state);
   }, [state]);
@@ -49,28 +59,41 @@ export default function Select({
 
   return (
     <div className="my-select">
-      <label>{title}</label>
+      <label className="my-select-label">{title}</label>
       <select
         title={title}
         value={state}
         onChange={handleChange}
-        className={
-          loading ? "my-select-loading" : error ? " my-select-error" : ""
-        }
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        disabled={loading || !!error}
+        data-elem={dataElem}
+        className={`my-select-select ${
+          state ? "my-select-select-filled" : "my-select-select-empty"
+        } ${
+          loading
+            ? "my-select-select-loading"
+            : error
+            ? " my-select-select-error"
+            : ""
+        }`}
       >
-        <option value="">{placeholder}</option>
+        <option value="" disabled selected>
+          {placeholder}
+        </option>
         {options.map((option) => {
           return (
             <option
               key={option}
               value={option}
+              className="my-selecet-select-option"
             >
               {option}
             </option>
           );
         })}
       </select>
-      <img className="select-down-arrow" src={SelectDownArrow} alt={title}/>
+      <img className={`my-select-arrow ${isInFocus ? "my-select-arrow-up" : ""}`} src={SelectDownArrow} alt={title} />
     </div>
   );
 }
