@@ -8,6 +8,8 @@ interface ISearch {
   placeholder: string;
   textSearchButton: string;
   action: () => void;
+  dataElem?: string;
+  refInput: React.RefObject<HTMLInputElement>;
 }
 
 export default function Search({
@@ -16,10 +18,17 @@ export default function Search({
   placeholder,
   textSearchButton,
   action,
+  dataElem,
+  refInput
 }: ISearch) {
+  const actionWithStop= (event?: React.MouseEvent<HTMLButtonElement>) => {
+    event?.stopPropagation();
+    action();
+  };
+
   return (
     <div className="search">
-      <div>
+      <div className="search-icon">
         <svg
           width="16"
           height="16"
@@ -41,8 +50,12 @@ export default function Search({
         setValue={setValue}
         placeholder={placeholder}
         action={action}
+        dataElem={dataElem}
+        refInput={refInput}
       />
-      <MyButton action={action}>{textSearchButton}</MyButton>
+      <MyButton action={actionWithStop} dataElem="search-button">
+        {textSearchButton}
+      </MyButton>
     </div>
   );
 }
