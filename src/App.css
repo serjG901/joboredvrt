@@ -98,7 +98,7 @@
   --color-gray-100: #f5f5f6;
   --color-white: #ffffff;
   --color-blue-600: #3b7cd3;
-  --color-blue-500-main: #5e96fc;/*main*/
+  --color-blue-500-main: #5e96fc; /*main*/
   --color-blue-400: #92c1ff;
   --color-blue-300: #b7d6ff;
   --color-blue-200: #c9e0ff;
@@ -148,8 +148,8 @@
   --border-style-regular: solid;
 
   /*search*/
-  --search-display: flex;
-  --search-justify-content: space-between;
+  --search--display: flex;
+  --search--justify-content: space-between;
 
   --search-default--border: var(--border-size-regular)
     var(--border-style-regular) var(--color-gray-300);
@@ -166,9 +166,32 @@
   --search--background-color: var(--color-white);
   --search--border-radius: var(--border-radius-m);
 
-  --search-gap: var(--gap-xs);
+  --search--gap: var(--gap-xs);
 
-  --search-padding-inline: var(--padding-inline-m);
+  --search--padding: 0 var(--padding-inline-m);
+
+  /*select*/
+  --my-select--display: flex;
+  --my-select--justify-content: space-between;
+
+  --my-select-default--border: var(--border-size-regular)
+    var(--border-style-regular) var(--color-gray-300);
+
+  --my-select-hover--border: var(--border-size-regular)
+    var(--border-style-regular) var(--color-blue-500-main);
+
+  --my-select-focus--border: var(--border-size-regular)
+    var(--border-style-regular) var(--color-blue-500-main);
+
+  --my-select-filled--border: var(--border-size-regular)
+    var(--border-style-regular) var(--color-gray-300);
+
+  --my-select--background-color: var(--color-white);
+  --my-select--border-radius: var(--border-radius-m);
+
+  --my-select--gap: var(--gap-xs);
+
+  --my-select--padding: var(--padding-block-m) var(--padding-inline-m);
 
   /*input*/
   --input--font: var(--font--subtitle-s);
