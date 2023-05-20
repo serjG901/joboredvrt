@@ -5,12 +5,8 @@
   gap: 8px;
 }
 
-.form-salary label {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+.form-salary-label {
+  font: var(--font--text-base-m-bold);
   color: #232134;
 }
 
