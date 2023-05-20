@@ -98,7 +98,7 @@
   --color-gray-100: #f5f5f6;
   --color-white: #ffffff;
   --color-blue-600: #3b7cd3;
-  --color-blue-500-main: #5e96fc;
+  --color-blue-500-main: #5e96fc;/*main*/
   --color-blue-400: #92c1ff;
   --color-blue-300: #b7d6ff;
   --color-blue-200: #c9e0ff;
@@ -155,10 +155,10 @@
     var(--border-style-regular) var(--color-gray-300);
 
   --search-hover--border: var(--border-size-regular) var(--border-style-regular)
-    var(--color-blue-500);
+    var(--color-blue-500-main);
 
   --search-focus--border: var(--border-size-regular) var(--border-style-regular)
-    var(--color-blue-500);
+    var(--color-blue-500-main);
 
   --search-filled--border: var(--border-size-regular)
     var(--border-style-regular) var(--color-gray-200);
