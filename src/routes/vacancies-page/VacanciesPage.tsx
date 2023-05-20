@@ -1,13 +1,13 @@
 import "./style.css";
 import useVacanciesStore, { IVacancy } from "../../store/useVacanciesStore";
-import Filtervacanciesdata from "../../components/soul/filter-vacancies-data";
+import Filtervacanciesdata from "../../components/thing/filter-vacancies-data";
 import { useEffect } from "react";
-import SearchVacanciesData from "../../components/soul/search-vacancies-data";
-import EmptySearchData from "../../components/soul/empty-search-data";
-import PaginateVacanciesData from "../../components/soul/paginate-vacancies-data";
-import ErrorSearchData from "../../components/soul/error-search-data";
-import CardsVacancyLoadingData from "../../components/soul/cards-vacancy-loading-data";
-import CardVacancyData from "../../components/soul/card-vacancy-data";
+import SearchVacanciesData from "../../components/thing/search-vacancies-data";
+import EmptySearchData from "../../components/thing/empty-search-data";
+import PaginateVacanciesData from "../../components/thing/paginate-vacancies-data";
+import ErrorSearchData from "../../components/thing/error-search-data";
+import CardsVacancyLoadingData from "../../components/thing/cards-vacancy-loading-data";
+import CardVacancyData from "../../components/thing/card-vacancy-data";
 
 export default function VacanciesPage() {
   const [vacancies, loading, error, getVacancies] = useVacanciesStore(

@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import ErrorSearchData from "../../components/soul/error-search-data";
+import ErrorSearchData from "../../components/thing/error-search-data";
 
 interface IError {
   status?: string;
