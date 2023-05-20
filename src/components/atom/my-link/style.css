@@ -11,15 +11,18 @@
 }
 .my-link a {
   font-weight: 400;
-  color: #232134;
+  color: var(--color-black);
   text-decoration: inherit;
 }
-.my-link a :hover {
+.my-link a:hover {
+  color: var(--color-black);
+}
+.my-link a:active {
   font-weight: 500;
-  color: #5e96fc;
+  color: var(--color-blue-500-main);
 }
 
 .my-link a.my-link_active {
   font-weight: 500;
-  color: #5e96fc;
+  color: var(--color-blue-500-main);
 }
