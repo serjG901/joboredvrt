@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Search from "../../molecul/search";
 import "./style.css";
 
@@ -16,14 +17,20 @@ export default function SearchVacancies({
   textSearchButton,
   action,
 }: ISearchVacancies) {
+  const refInput = useRef<HTMLInputElement>(null);
+  const handleSetFocusOnInput = () => {
+    refInput.current?.focus();
+  };
   return (
-    <div className="search-vacancies">
+    <div className="search-vacancies" onClick={handleSetFocusOnInput}>
       <Search
         value={value}
         setValue={setValue}
         placeholder={placeholder}
         textSearchButton={textSearchButton}
         action={action}
+        dataElem="search-input"
+        refInput={refInput}
       />
     </div>
   );
