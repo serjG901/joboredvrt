@@ -3,7 +3,18 @@ import oauthUserSettings from "./constants/oauthUserSettings";
 import secretKey from "./constants/secretKey";
 import urlRefresh from "./constants/urlRefresh";
 
-export default async function fetchRefresh(refresh: string) {
+interface IToken {
+  access_token: string;
+  expires_in: number;
+  refresh_token: string;
+  reg_user_resumes_count: number;
+  token_type: string;
+  ttl: number;
+}
+
+export default async function fetchRefresh(
+  refresh: string
+): Promise<IToken | unknown> {
   const query = serialiseQuery({
     refresh_token: refresh,
     client_id: oauthUserSettings.client_id,
@@ -21,7 +32,7 @@ export default async function fetchRefresh(refresh: string) {
         "X-Api-App-Id": oauthUserSettings.client_secret,
       },
     });
-    const res = await response.json();
+    const res = (await response.json()) as IToken;
     console.log(functionName + ":", res);
     return res;
   } catch (error) {

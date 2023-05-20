@@ -1,16 +1,12 @@
 import oauthUserSettings from "./constants/oauthUserSettings";
 import secretKey from "./constants/secretKey";
 import urlVacancyById from "./constants/urlVacancyById";
-import fetchOath from "./fetchOath";
-import fetchRefresh from "./fetchRefresh";
+import getToken from "./helpers/getToken";
 
 export default async function fetchVacancyById(id: number | string) {
-  let user = await fetchOath();
-  console.log(user);
-  if (user.ttl < Date.now()/1000) {
-    user = await fetchRefresh(user.refresh_token);
-    console.log(user);
-  }
+  const token = await getToken();
+  if (!token) throw new Error("Can't getToken");
+  console.log(token);
 
   const functionName = fetchVacancyById.name;
   const url = urlVacancyById(id);
@@ -23,7 +19,7 @@ export default async function fetchVacancyById(id: number | string) {
         "Content-Type": "application/x-www-form-urlencoded",
         "x-secret-key": secretKey,
         "X-Api-App-Id": oauthUserSettings.client_secret,
-        Authorization: `${user.token_type} ${user.access_token}`,
+        Authorization: `${token.token_type} ${token.access_token}`,
       },
     });
     const res = await response.json();

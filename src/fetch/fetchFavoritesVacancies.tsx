@@ -1,9 +1,8 @@
 import urlVacancies from "./constants/urlVacancies";
 import secretKey from "./constants/secretKey";
-import fetchOath from "./fetchOath";
 import oauthUserSettings from "./constants/oauthUserSettings";
-import fetchRefresh from "./fetchRefresh";
 import serialiseQuery from "./helpers/serialiseQuery";
+import getToken from "./helpers/getToken";
 
 interface IVacancy {
   canEdit: boolean;
@@ -150,12 +149,9 @@ export default async function fetchFavoritesVacancies({
   count,
   controller,
 }: IFetchFavoritesVacancies): Promise<IVacancies | unknown> {
-  let user = await fetchOath();
-  console.log(user);
-  if (user.ttl < Date.now()/1000) {
-    user = await fetchRefresh(user.refresh_token);
-    console.log(user);
-  }
+  const token = await getToken();
+  if (!token) throw new Error("Can't getToken");
+  console.log(token);
 
   const query = { ids, page, count };
   console.log(serialiseQuery(query));
@@ -169,7 +165,7 @@ export default async function fetchFavoritesVacancies({
         "Content-Type": "application/x-www-form-urlencoded",
         "x-secret-key": secretKey,
         "X-Api-App-Id": oauthUserSettings.client_secret,
-        Authorization: `${user.token_type} ${user.access_token}`,
+        Authorization: `${token.token_type} ${token.access_token}`,
       },
       signal: controller?.signal,
     });
