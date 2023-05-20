@@ -25,18 +25,20 @@ export default function FormSalary({
 }: IFormSalary) {
   return (
     <div className="form-salary">
-      <label>{title}</label>
+      <label className="form-salary-label">{title}</label>
       <Inputnumber
         value={payment_from === 0 ? "" : `${payment_from}`}
         setValue={setPayment_from}
         placeholder={placeholders.from}
         step={step}
+        dataElem="salary-from-input"
       />
       <Inputnumber
         value={payment_to === 0 ? "" : `${payment_to}`}
         setValue={setPayment_to}
         placeholder={placeholders.to}
         step={step}
+        dataElem="salary-to-input"
       />
     </div>
   );
