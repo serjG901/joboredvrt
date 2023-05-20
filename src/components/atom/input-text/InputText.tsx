@@ -7,6 +7,8 @@ interface IInputText {
   setValue: (value: string) => void;
   placeholder: string;
   action: () => void;
+  dataElem?: string;
+  refInput?: React.RefObject<HTMLInputElement>;
 }
 
 export default function InputText({
@@ -15,6 +17,8 @@ export default function InputText({
   setValue,
   placeholder,
   action,
+  dataElem,
+  refInput
 }: IInputText) {
   const [state, setState] = useState(value);
 
@@ -39,12 +43,14 @@ export default function InputText({
 
   return (
     <input
+      ref={refInput}
       className="input-text"
       type={type}
       placeholder={placeholder}
       value={state}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
+      data-elem={dataElem}
     />
   );
 }
