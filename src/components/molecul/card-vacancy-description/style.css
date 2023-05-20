@@ -6,6 +6,7 @@
   color: #232134;
   width: 100%;
   text-align: left;
+  -webkit-hyphens: auto;
   hyphens: auto;
   word-break: break-word;
 }
