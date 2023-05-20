@@ -14,6 +14,8 @@
   height: 42px;
   outline: none;
   border: var(--search-default--border);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .input-number input::placeholder {
