@@ -32,7 +32,7 @@ export default function Favorites() {
           <>
             {vacancies.length ? (
               vacancies.map((vacancy: IVacancy) => (
-                <CardVacancyData vacancy={vacancy} />
+                <CardVacancyData key={vacancy.id} vacancy={vacancy} />
               ))
             ) : (
               <EmptyFavorites />
