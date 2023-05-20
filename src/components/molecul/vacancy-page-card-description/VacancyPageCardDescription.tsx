@@ -45,7 +45,9 @@ export default function VacancyPageCardDescription({
   }`;
   return (
     <div className="vacancy-page-card-description">
-      <div className="vacancy-page-card-description-profession">{profession}</div>
+      <div className="vacancy-page-card-description-profession">
+        {profession}
+      </div>
       <div className="vacancy-page-card-description-payment-and-typeofwork">
         <div className="vacancy-page-card-description-payment-and-typeofwork-payment">
           {payment}
@@ -57,12 +59,16 @@ export default function VacancyPageCardDescription({
           {type_of_workTitle}
         </div>
       </div>
+
       <div className="vacancy-page-card-description-town">
         <div className="vacancy-page-card-description-town-point">
           <img src={TownPoint} alt={"point"} />
         </div>
-        <div className="vacancy-page-card-description-town-title">{townTitle}, {firm_name}</div>
+        <div className="vacancy-page-card-description-town-title">
+          {townTitle}
+        </div>
       </div>
+      <div className="vacancy-page-card-description-firm">{firm_name}</div>
     </div>
   );
 }
