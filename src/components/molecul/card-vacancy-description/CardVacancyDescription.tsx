@@ -62,8 +62,8 @@ export default function CardVacancyDescription({
           <img src={TownPoint} alt={"point"} />
         </div>
         <div className="card-vacancy-description-town-title">{townTitle}</div>
-        <div className="card-vacancy-description-town-firm">{firm_name}</div>
       </div>
+      <div className="card-vacancy-description-town-firm">{firm_name}</div>
     </div>
   );
 }

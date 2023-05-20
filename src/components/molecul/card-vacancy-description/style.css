@@ -3,8 +3,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+  color: #232134;
   width: 100%;
   text-align: left;
+  hyphens: auto;
+  word-break: break-word;
 }
 
 .card-vacancy-description-profession {
@@ -13,7 +16,6 @@
   line-height: 24px;
   color: #5e96fc;
   text-align: left;
-  word-break: break-word;
   max-width: calc(100% - 24px);
 }
 
@@ -51,8 +53,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  word-break: break-word;
-  max-width: calc(100% - 24px);
 }
 
 .card-vacancy-description-town-point {
@@ -61,15 +61,10 @@
 }
 
 .card-vacancy-description-town-title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #acadb9;
+  font: var(--font--text-base-m-regular);
 }
 
-.card-vacancy-description-town-firm {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #232134;
+.card-vacancy-description-firm {
+  display: flex;
+  align-items: center;
 }
