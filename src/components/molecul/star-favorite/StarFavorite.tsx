@@ -6,7 +6,7 @@ import MyButton from "../../atom/my-button";
 import { useState } from "react";
 
 interface IStarFavorite {
-  action: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+  action: () => void;
   isFavorite: boolean;
   altFavorite: string;
 }
@@ -19,7 +19,10 @@ export default function StarFavorite({
   const [hover, setHover] = useState(false);
   const handleMouseLeave = () => setHover(false);
   const handleMouseOver = () => setHover(true);
-
+  const actionWithPrevent = (event?: React.MouseEvent<HTMLButtonElement>) => {
+    event?.preventDefault();
+    action();
+  };
   return (
     <div
       className={`star-favorite ${isFavorite ? "is-favorite" : ""}`}
@@ -27,7 +30,7 @@ export default function StarFavorite({
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
     >
-      <MyButton action={action}>
+      <MyButton action={actionWithPrevent}>
         <>
           <img
             className={`star-favorite-star ${
