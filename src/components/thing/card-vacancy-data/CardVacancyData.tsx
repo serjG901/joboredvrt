@@ -21,8 +21,7 @@ export default function CardVacancyData({ vacancy }: ICardVacancyData) {
       state.deleteFavoriteVacancyId,
     ]);
   const isFavorite = favoriteVacanciesIds.includes(vacancy.id);
-  const actionFavoriteStar = (event?: React.MouseEvent<HTMLButtonElement>) => {
-    event?.preventDefault();
+  const actionFavoriteStar = () => {
     isFavorite
       ? deleteFavoriteVacancyId(vacancy.id)
       : addFavoriteVacancyId(vacancy.id);
