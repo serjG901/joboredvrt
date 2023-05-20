@@ -9,7 +9,7 @@
   padding: 4px 20px;
   width: 83px;
   height: 32px;
-  background-color: #5e96fc;
+  background-color: var(--color-blue-500-main);
   border-radius: 8px;
   font-weight: 500;
   font-size: 14px;
@@ -19,11 +19,17 @@
 }
 
 .search button:hover {
-  background-color: #4369b1;
+  background-color: var(--color-blue-400);
 }
+
+.search button:active {
+  background-color: var(--color-blue-600);
+}
+
 .search-icon {
   display: inherit;
 }
+
 .search input {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   width: calc(100% - 83px);
