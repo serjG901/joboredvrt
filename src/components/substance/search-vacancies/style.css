@@ -3,13 +3,14 @@
   width: 100%;
   height: 48px;
   background: #ffffff;
-  padding: 8px 12px;
+  padding: var(--search--padding);
   border: var(--search-default--border);
   border-radius: 8px;
   display: flex;
   align-items: center;
   grid-area: search;
   outline: none;
+  cursor: text;
 }
 
 .search-vacancies:hover {
