@@ -25,8 +25,8 @@
   width: 100%;
   cursor: pointer;
   background-color: transparent;
-  -webkit-appearance: auto;
-  appearance: auto;
+  -webkit-appearance: none;
+  appearance: none;
   outline: none;
 }
 
@@ -59,7 +59,7 @@
   position: absolute;
   right: 1px;
   top: 36px;
-  background-color: var(--color-white);
+  background-color: transparent;
   padding-right: 10px;
   pointer-events: none;
 }
