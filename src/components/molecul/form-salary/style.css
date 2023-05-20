@@ -10,9 +10,4 @@
   color: #232134;
 }
 
-.form-salary input[type="number"]::-webkit-inner-spin-button,
-.form-salary input[type="number"]::-webkit-outer-spin-button {
-  opacity: 1;
-  height: 32px;
-  cursor: pointer;
-}
+
