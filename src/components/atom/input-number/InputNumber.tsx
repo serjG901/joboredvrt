@@ -7,6 +7,7 @@ interface IInputNumber {
   setValue: (value: string) => void;
   placeholder: string;
   step: number;
+  dataElem?: string;
 }
 
 export default function InputNumber({
@@ -14,6 +15,7 @@ export default function InputNumber({
   setValue,
   placeholder,
   step,
+  dataElem,
 }: IInputNumber) {
   const [state, setState] = useState(value);
 
@@ -43,11 +45,12 @@ export default function InputNumber({
   return (
     <div className="input-number">
       <input
-        type="text"
+        type="number"
         placeholder={placeholder}
         value={state}
         onChange={handleChange}
         step={step}
+        data-elem={dataElem}
       />
       <div className="input-number-arrows">
         <div className="input-number-arrow-up" onClick={handlePlus}>
