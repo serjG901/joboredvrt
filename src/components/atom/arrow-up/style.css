@@ -1,0 +1,20 @@
+.arrow-up {
+    width: 18px;
+    height: 14px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-up svg {
+  stroke: var(--color-gray-500);
+}
+
+.arrow-up:hover svg {
+  stroke: var(--color-blue-400);
+}
+
+.arrow-up:active svg {
+  stroke: var(--color-blue-500-main);
+}

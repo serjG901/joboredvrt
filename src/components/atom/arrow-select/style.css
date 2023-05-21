@@ -1,0 +1,13 @@
+.arrow-select {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-white);
+}
+
+.arrow-select svg {
+  stroke: var(--color-gray-500);
+}
+
+.arrow-select:hover svg {
+  stroke: var(--color-blue-500-main);
+}
