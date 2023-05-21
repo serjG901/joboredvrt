@@ -38,7 +38,7 @@ export default function CardVacancy({
   altFavorite,
 }: ICardVacancy) {
   return (
-    <Link to={`../vacancies/${vacancyId}`}>
+    <Link to={`../vacancies/${vacancyId}`} data-elem={`vacancy-${vacancyId}`}>
       <CardVacancyEmpty>
         <CardVacancyDescription
           profession={profession}
@@ -54,6 +54,7 @@ export default function CardVacancy({
           isFavorite={isFavorite}
           action={actionFavoriteStar}
           altFavorite={altFavorite}
+          dataElem={`vacancy-${vacancyId}-shortlist-button`}
         />
       </CardVacancyEmpty>
     </Link>
