@@ -3,22 +3,24 @@ import "./style.css";
 
 interface IInputText {
   type: string;
+  step?: number;
   value: string;
   setValue: (value: string) => void;
   placeholder: string;
-  action: () => void;
+  action?: () => void;
   dataElem?: string;
   refInput?: React.RefObject<HTMLInputElement>;
 }
 
 export default function InputText({
   type,
+  step,
   value,
   setValue,
   placeholder,
   action,
   dataElem,
-  refInput
+  refInput,
 }: IInputText) {
   const [state, setState] = useState(value);
 
@@ -29,7 +31,7 @@ export default function InputText({
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     console.log(event.key);
     if (event.key === "Enter") {
-      action();
+      action && action();
     }
   };
 
@@ -44,8 +46,9 @@ export default function InputText({
   return (
     <input
       ref={refInput}
-      className="input-text"
+      className="my-input"
       type={type}
+      step={step}
       placeholder={placeholder}
       value={state}
       onChange={handleChange}
