@@ -1,24 +1,4 @@
-.star-favorite button {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
-}
-
-.star-favorite-star {
-  position: absolute;
-  top:0;
-  left:0;
-  opacity:0;
-  transition: opacity 0.5s ease;
-}
-
-.is-favorite-empty {
-    opacity:1;
-}
-
-
-.is-favorite-fill {
-    opacity:1;
+.star-favorite {
+  width: min-content;
+  height: min-content; 
 }
