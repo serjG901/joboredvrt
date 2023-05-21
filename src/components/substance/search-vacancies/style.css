@@ -21,6 +21,6 @@
   border: var(--search-focus--border);
 }
 
-.search-vacancies:has(input:not([value=""]):not(:focus)) {
+.search-vacancies:has(input:not([value=""]):not(:focus)):not(:hover) {
   border: var(--search-filled--border);
 }
