@@ -4,6 +4,7 @@ import FormSalary from "../../molecul/form-salary";
 import ButtonApplyFilter from "../../molecul/button-apply-filter";
 import { useState } from "react";
 import MyButton from "../../atom/my-button";
+import HideFilter from "./hide-filter.svg";
 
 interface ICatalog {
   key: number;
@@ -126,7 +127,7 @@ export default function Filtervacancies({
         }`}
       >
         <MyButton action={handleShow}>
-          <img src={ArrowDown} alt={show ? "hide filter" : "show filter"} />
+          <img src={HideFilter} alt={show ? "hide filter" : "show filter"} />
         </MyButton>
       </div>
     </div>
