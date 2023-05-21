@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import ErrorSearchData from "../../components/thing/error-search-data";
+import Error404svg from "../../components/atom/error-404-svg";
 
 interface IError {
   status?: string;
@@ -14,7 +14,7 @@ export default function ErrorPage() {
 
   return (
     <div id="error-page">
-      <ErrorSearchData />
+      <Error404svg />
       <h1>{error.status}</h1>
       <h2>{error.statusText}</h2>
       <p>Sorry, an unexpected error has occurred.</p>
