@@ -7,7 +7,5 @@
 
 .form-salary-label {
   font: var(--font--text-base-m-bold);
-  color: #232134;
+  color: var(--color-black);
 }
-
-
