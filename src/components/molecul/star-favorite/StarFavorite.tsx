@@ -1,20 +1,20 @@
 import "./style.css";
-import StarEmpty from "./star-empty.svg";
-import StarFill from "./star-fill.svg";
-import StarHover from "../../../assets/favorite-star-empty-hover.svg";
 import MyButton from "../../atom/my-button";
 import { useState } from "react";
+import StarSvg from "../../atom/star-svg";
 
 interface IStarFavorite {
   action: () => void;
   isFavorite: boolean;
   altFavorite: string;
+  dataElem?: string;
 }
 
 export default function StarFavorite({
   action,
   isFavorite,
   altFavorite,
+  dataElem,
 }: IStarFavorite) {
   const [hover, setHover] = useState(false);
   const handleMouseLeave = () => setHover(false);
@@ -30,23 +30,8 @@ export default function StarFavorite({
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
     >
-      <MyButton action={actionWithPrevent}>
-        <>
-          <img
-            className={`star-favorite-star ${
-              !isFavorite ? "is-favorite-empty" : ""
-            }`}
-            src={hover ? StarHover : StarEmpty}
-            alt={altFavorite}
-          />
-          <img
-            className={`star-favorite-star ${
-              isFavorite ? "is-favorite-fill" : ""
-            }`}
-            src={StarFill}
-            alt={altFavorite}
-          />
-        </>
+      <MyButton action={actionWithPrevent} dataElem={dataElem}>
+        <StarSvg filled={isFavorite} />
       </MyButton>
     </div>
   );
