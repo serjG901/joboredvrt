@@ -1,14 +1,14 @@
+import ErrorSvg from "../../atom/error-svg";
 import "./style.css";
 
 interface IErrorSearch {
-  image: string;
   text: string;
 }
 
-export default function ErrorSearch({ image, text }: IErrorSearch) {
+export default function ErrorSearch({ text }: IErrorSearch) {
   return (
     <div className="error-search">
-      <img src={image} alt={text} />
+      <ErrorSvg />
       <div className="error-search-text">{text}</div>
     </div>
   );
