@@ -1,0 +1,18 @@
+.star-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.star-svg svg {
+  stroke: var(--color-gray-500);
+}
+
+.star-svg:hover svg {
+  stroke: var(--color-blue-500-main);
+}
+
+.star-svg-filled svg,
+.star-svg-filled:hover svg {
+  stroke: var(--color-blue-500-main);
+  fill: var(--color-blue-500-main);
+}
