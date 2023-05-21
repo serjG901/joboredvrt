@@ -4,7 +4,6 @@ import FormSalary from "../../molecul/form-salary";
 import ButtonApplyFilter from "../../molecul/button-apply-filter";
 import { useState } from "react";
 import MyButton from "../../atom/my-button";
-import ArrowDown from "./arrow-down.svg";
 
 interface ICatalog {
   key: number;
