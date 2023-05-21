@@ -54,7 +54,7 @@
   --title-s-bold--font-style: normal;
   --title-s-bold--font-weight: 700;
   --title-s-bold--font-size: 20px;
-  --title-s-bold--line-height: 20px;
+  --title-s-bold--line-height: 19px;
   --title-s-bold--font-family: var(--font-family-regular);
   --font--title-s-bold: var(--title-s-bold--font-style)
     var(--title-s-bold--font-weight) var(--title-s-bold--font-size) /
