@@ -15,7 +15,6 @@
 .filter-vacancies-header {
   display: flex;
   justify-content: space-between;
-  height: 20px;
   align-items: center;
 }
 .filter-vacancies-header-formname {
