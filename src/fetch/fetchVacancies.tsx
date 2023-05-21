@@ -158,7 +158,7 @@ export default async function fetchVacancies({
   controller,
 }: IFetchVacancies): Promise<IVacancies | unknown> {
   const token = await getToken();
-  if (!token) throw new Error("Can't getToken");
+  //if (!token) throw new Error("Can't getToken");
   console.log(token);
 
   const query = {
@@ -182,7 +182,7 @@ export default async function fetchVacancies({
         "Content-Type": "application/x-www-form-urlencoded",
         "x-secret-key": secretKey,
         "X-Api-App-Id": oauthUserSettings.client_secret,
-        Authorization: `${token.token_type} ${token.access_token}`,
+        Authorization: `${token?.token_type} ${token?.access_token}`,
       },
       signal: controller?.signal,
     });

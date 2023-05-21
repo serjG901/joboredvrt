@@ -5,7 +5,7 @@ import getToken from "./helpers/getToken";
 
 export default async function fetchVacancyById(id: number | string) {
   const token = await getToken();
-  if (!token) throw new Error("Can't getToken");
+  //if (!token) throw new Error("Can't getToken");
   console.log(token);
 
   const functionName = fetchVacancyById.name;
@@ -19,7 +19,7 @@ export default async function fetchVacancyById(id: number | string) {
         "Content-Type": "application/x-www-form-urlencoded",
         "x-secret-key": secretKey,
         "X-Api-App-Id": oauthUserSettings.client_secret,
-        Authorization: `${token.token_type} ${token.access_token}`,
+        Authorization: `${token?.token_type} ${token?.access_token}`,
       },
     });
     const res = await response.json();
