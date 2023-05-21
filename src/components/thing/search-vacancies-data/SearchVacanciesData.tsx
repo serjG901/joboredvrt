@@ -1,7 +1,6 @@
 import useLanguageStore from "../../../store/useLanguageStore";
 import useVacanciesStore from "../../../store/useVacanciesStore";
 import SearchVacancies from "../../substance/search-vacancies";
-import "./style.css";
 
 export default function SearchVacanciesData() {
   const [applyFilter, keyword, setKeyword] = useVacanciesStore((state) => [
