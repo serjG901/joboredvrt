@@ -5,6 +5,7 @@ interface IMyButton {
   action?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   dataElem?: string;
+  title?: string;
 }
 
 export default function MyButton({
@@ -12,6 +13,7 @@ export default function MyButton({
   action,
   disabled,
   dataElem,
+  title,
 }: IMyButton) {
   return (
     <button
@@ -19,6 +21,7 @@ export default function MyButton({
       onClick={action}
       disabled={disabled}
       data-elem={dataElem}
+      title={title}
     >
       {children}
     </button>
