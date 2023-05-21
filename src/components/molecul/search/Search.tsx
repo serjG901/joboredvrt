@@ -1,5 +1,5 @@
 import "./style.css";
-import Inputtext from "../../atom/input-text";
+import Inputtext from "../../atom/my-input";
 import MyButton from "../../atom/my-button";
 
 interface ISearch {
