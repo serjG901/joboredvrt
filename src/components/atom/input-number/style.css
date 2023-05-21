@@ -1,19 +1,23 @@
 .input-number {
   position: relative;
   width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: var(--my-select-default--border);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .input-number input {
   font: var(--font--subtitle-s);
-  align-items: center;
+  width: 100%;
   padding-inline: var(--padding-inline-m);
   padding-block: var(--padding-block-s);
-  border: 1px solid #d5d6dc;
   border-radius: 8px;
-  width: 100%;
-  height: 42px;
+  border: none;
   outline: none;
-  border: var(--search-default--border);
   -webkit-appearance: none;
   appearance: none;
 }
@@ -24,46 +28,22 @@
 
 .input-number-arrows {
   position: absolute;
-  top: 3px;
+  top: 5px;
   right: 8px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  gap: 2px;
   background-color: var(--color-white);
 }
 
-.input-number-arrow-up {
-  display: flex;
-  cursor: pointer;
-  padding: 5px 4px 0px 4px;
-  background-color: var(--color-white);
+.input-number:hover {
+  border: var(--my-select-hover--border);
 }
 
-.input-number-arrow-down {
-  display: flex;
-  transform: rotateZ(180deg);
-  cursor: pointer;
-  padding: 5px 4px 0px 4px;
-  background-color: var(--color-white);
+.input-number:focus {
+  border: var(--my-select-focus--border);
 }
 
-.input-number-arrow-up:hover {
-  background-color: var(--color-gray-100);
-}
-
-.input-number-arrow-down:hover {
-  background-color: var(--color-gray-100);
-}
-
-.input-number input:hover {
-  border: var(--search-hover--border);
-}
-
-.input-number input:has(input:focus) {
-  border: var(--search-focus--border);
-}
-
-.input-number:has(input:not([value=""]):not(:focus)) input {
-  border: var(--search-filled--border);
+.input-number:has(input:not([value=""])):not(:focus):not(:hover) {
+  border: var(--my-select-filled--border);
 }

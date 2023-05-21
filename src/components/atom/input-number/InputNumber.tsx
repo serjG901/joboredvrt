@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import "./style.css";
 import InputNumberUpArrow from "./input-number-up-arrow.svg";
+import MyButton from "../my-button";
+import ArrowUp from "../arrow-up";
+import ArrowDown from "../arrow-down";
 
 interface IInputNumber {
   value: string;
@@ -53,12 +56,12 @@ export default function InputNumber({
         data-elem={dataElem}
       />
       <div className="input-number-arrows">
-        <div className="input-number-arrow-up" onClick={handlePlus}>
-          <img src={InputNumberUpArrow} title={`+${step}`} />
-        </div>
-        <div className="input-number-arrow-down" onClick={handleMinus}>
-          <img src={InputNumberUpArrow} title={`-${step}`} />
-        </div>
+        <MyButton action={handlePlus} title={`+${step}`}>
+          <ArrowUp />
+        </MyButton>
+        <MyButton action={handleMinus} title={`-${step}`}>
+          <ArrowDown />
+        </MyButton>
       </div>
     </div>
   );
