@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import "./style.css";
-import SelectDownArrow from "./Down2.svg";
+import { useEffect, useState } from "react";
+import ArrowSelect from "../arrow-select";
 interface ISelect {
   loading: boolean;
   loadingmessage: string;
@@ -93,7 +93,11 @@ export default function Select({
           );
         })}
       </select>
-      <img className={`my-select-arrow ${isInFocus ? "my-select-arrow-up" : ""}`} src={SelectDownArrow} alt={title} />
+      <div
+        className={`my-select-arrow ${isInFocus ? "my-select-arrow-up" : ""}`}
+      >
+        <ArrowSelect />
+      </div>
     </div>
   );
 }
