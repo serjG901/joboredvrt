@@ -5,7 +5,6 @@ a:has(.card-vacancy-empty) {
   display: flex;
   justify-content: space-between;
   padding: 24px;
-  gap: 20px;
   width: 100%;
   min-height: 175px;
   background-color: #ffffff;
