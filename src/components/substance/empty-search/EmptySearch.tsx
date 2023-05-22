@@ -6,9 +6,10 @@ interface IEmptySearch {
   image: string;
   text: { explain: string; textButton: string };
   hasLink?: boolean;
+  action: () => void;
 }
 
-export default function EmptySearch({ image, text, hasLink }: IEmptySearch) {
+export default function EmptySearch({ image, text, hasLink, action }: IEmptySearch) {
   return (
     <div className="empty-search">
       <img src={image} alt={text.explain} />
@@ -16,7 +17,7 @@ export default function EmptySearch({ image, text, hasLink }: IEmptySearch) {
       {hasLink && (
         <div className="empty-search-button">
           <Link to={"/vacancies"}>
-            <MyButton>{text.textButton}</MyButton>
+            <MyButton action={action}>{text.textButton}</MyButton>
           </Link>
         </div>
       )}

@@ -1,6 +1,7 @@
 .error-search {
   margin-top: 80px;
   margin-bottom: 44px;
+  word-break: break-word;
 }
 
 .error-search-text {

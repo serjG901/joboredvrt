@@ -12,6 +12,7 @@
   font-size: 24px;
   line-height: 29px;
   color: #343a40;
+  word-break: break-word;
 }
 
 .empty-search-button button {

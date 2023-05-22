@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom";
 import "./style.css";
 import useVacanciesStore from "../../store/useVacanciesStore";
 import { useEffect } from "react";
-import ErrorSearchData from "../../components/thing/error-search-data";
 import EmptySearchData from "../../components/thing/empty-search-data";
 import VacancyPageCardLoadingData from "../../components/thing/vacancy-page-card-loading-data";
 import CardVacancyData from "../../components/thing/card-vacancy-data";
+import ErrorSearchData from "../../components/thing/error-search-data";
 
 export default function VacancyPage() {
   const { id } = useParams<"id">();
@@ -20,7 +20,8 @@ export default function VacancyPage() {
   useEffect(() => {
     getVacancyPageById(id || "");
   }, []);
-
+  console.log('vacancy',loading);
+console.log(error);
   return (
     <div className="vacancy-page">
       {loading ? (

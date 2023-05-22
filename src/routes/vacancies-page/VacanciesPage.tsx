@@ -24,7 +24,8 @@ export default function VacanciesPage() {
   useEffect(() => {
     getVacancies();
   }, []);
-
+  console.log('vacancies',loading);
+  console.log(error);
   return (
     <div className="vacancies-page">
       <Filtervacanciesdata />

@@ -2,7 +2,7 @@ import "./style.css";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useVacanciesStore, { IVacancy } from "../../store/useVacanciesStore";
-import EmptyFavorites from "../../components/thing/empty-favorites-data";
+import EmptyFavoritesData from "../../components/thing/empty-favorites-data";
 import CardsVacancyLoadingData from "../../components/thing/cards-vacancy-loading-data";
 import ErrorSearchData from "../../components/thing/error-search-data";
 import CardVacancyData from "../../components/thing/card-vacancy-data";
@@ -21,7 +21,8 @@ export default function Favorites() {
   useEffect(() => {
     getFavoriteVacancies();
   }, []);
-
+  console.log('favorites',loading);
+  console.log(error);
   return (
     <div className="favorites">
       <div className="favorites-cards">
@@ -42,7 +43,7 @@ export default function Favorites() {
                 </Link>
               ))
             ) : (
-              <EmptyFavorites />
+              <EmptyFavoritesData />
             )}
           </>
         )}
