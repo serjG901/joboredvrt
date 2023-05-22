@@ -1,10 +1,11 @@
 import "./style.css";
+import { useState } from "react";
 import MySelect from "../../atom/my-select";
 import FormSalary from "../../molecul/form-salary";
 import ButtonApplyFilter from "../../molecul/button-apply-filter";
-import { useState } from "react";
 import MyButton from "../../atom/my-button";
-import HideFilter from "./hide-filter.svg";
+import ResetFilterAndSearch from "../../molecul/reset-filter-and-search";
+import HideFilter from "../../molecul/hide-filter";
 
 interface ICatalog {
   key: number;
@@ -35,15 +36,17 @@ interface IFiltervacancies {
     buttontext: string;
     loadingmessage: string;
     errormessage: string;
+    hideFilter: string;
+    showFilter: string;
   };
-  handleResetForm: () => void;
+  resetFilterAndSearch: () => void;
   payment_from: number;
   setPayment_from: (payment_from: string) => void;
   payment_to: number;
   setPayment_to: (payment_to: string) => void;
   catalog: ICatalog | null;
   setCatalog: (catalog: string) => void;
-  filterIsEmpty: boolean;
+  filterAndSearchIsEmpty: boolean;
   catalogues: ICatalog[];
   loading: boolean;
   error: unknown;
@@ -52,7 +55,7 @@ interface IFiltervacancies {
 
 export default function Filtervacancies({
   filtervacancies,
-  handleResetForm,
+  resetFilterAndSearch,
   payment_from,
   setPayment_from,
   payment_to,
@@ -60,35 +63,28 @@ export default function Filtervacancies({
   catalogues,
   catalog,
   setCatalog,
-  filterIsEmpty,
+  filterAndSearchIsEmpty,
   loading,
   error,
   applyFilter,
 }: IFiltervacancies) {
-  const [show, setShow] = useState(true);
-  const handleShow = () => setShow(!show);
+  const [filterShow, setFilterShow] = useState(true);
+  const changeFilterShowState = () => setFilterShow(!filterShow);
   return (
     <div className="filter-vacancies">
       <div className="filter-vacancies-header">
         <div className="filter-vacancies-header-formname">
           {filtervacancies.formName}
         </div>
-        <button
-          className={`filter-vacancies-header-formreset ${
-            filterIsEmpty ? "" : "filter-vacancies-header-formreset_red"
-          }`}
-          onClick={handleResetForm}
-        >
-          <div className="close">
-            {filtervacancies.formResetText}
-            <div className="close-icon">+</div>
-          </div>
-        </button>
+        <ResetFilterAndSearch
+          filterAndSearchIsEmpty={filterAndSearchIsEmpty}
+          resetFilterAndSearch={resetFilterAndSearch}
+          formResetText={filtervacancies.formResetText}
+        />
       </div>
-
       <div
         className={`filter-vacancies-form ${
-          show ? "" : "filter-vacancies-form_hide"
+          filterShow ? "" : "filter-vacancies-form_hide"
         }`}
       >
         <MySelect
@@ -121,15 +117,14 @@ export default function Filtervacancies({
           dataElem="search-button"
         />
       </div>
-      <div
-        className={`filter-vacancies-is-open ${
-          show ? "" : "filter-vacancies-is-close"
-        }`}
-      >
-        <MyButton action={handleShow}>
-          <img src={HideFilter} alt={show ? "hide filter" : "show filter"} />
-        </MyButton>
-      </div>
+      <HideFilter
+        filterShow={filterShow}
+        changeFilterShowState={changeFilterShowState}
+        titles={{
+          hideFilter: filtervacancies.hideFilter,
+          showFilter: filtervacancies.showFilter,
+        }}
+      />
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.reset-filter-and-search button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-gray-500);
+  display: none;
+  gap: 4px;
+}
+
+.reset-filter-and-search svg {
+  stroke: var(--color-gray-500);
+}
+
+.reset-filter-and-search-show button {
+  display: flex;
+}
+
+.reset-filter-and-search:hover button,
+.reset-filter-and-search:hover svg {
+  color: var(--color-blue-400);
+  stroke: var(--color-blue-400);
+}
+
+.reset-filter-and-search:active button,
+.reset-filter-and-search:active svg {
+  color: var(--color-blue-500-main);
+  stroke: var(--color-blue-500-main);
+}

@@ -1,0 +1,27 @@
+.hide-filter {
+  display: none;
+}
+.hide-filter svg {
+  fill: var(--color-blue-500-main);
+}
+
+.hide-filter:hover svg {
+  fill: var(--color-blue-400);
+}
+
+.hide-filter:active svg {
+  fill: var(--color-blue-600);
+}
+
+@media screen and (max-width: 640px) {
+  .hide-filter {
+    display: flex;
+    align-self: center;
+    transform: rotateX(180deg);
+  }
+
+  .hide-filter-show-filter {
+    margin-top: -84px;
+    transform: rotateX(0deg);
+  }
+}

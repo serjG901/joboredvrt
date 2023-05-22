@@ -12,9 +12,9 @@ export default function Filtervacanciesdata() {
     catalogues,
     catalog,
     setCatalog,
-    filterIsEmpty,
+    filterAndSearchIsEmpty,
     applyFilter,
-    resetFilter,
+    resetFilterAndSearch,
     loading,
     error,
     getCatalogues,
@@ -26,9 +26,9 @@ export default function Filtervacanciesdata() {
     state.catalogues,
     state.catalog,
     state.setCatalog,
-    state.filterIsEmpty,
+    state.filterAndSearchIsEmpty,
     state.applyFilter,
-    state.resetFilter,
+    state.resetFilterAndSearch,
     state.loadingCatalogues,
     state.errorCatalogues,
     state.getCatalogues,
@@ -43,7 +43,7 @@ export default function Filtervacanciesdata() {
   return (
     <Filtervacancies
       filtervacancies={textes.filtervacancies}
-      handleResetForm={resetFilter}
+      resetFilterAndSearch={resetFilterAndSearch}
       payment_from={payment_from}
       setPayment_from={setPayment_from}
       payment_to={payment_to}
@@ -51,7 +51,7 @@ export default function Filtervacanciesdata() {
       catalogues={catalogues}
       catalog={catalog}
       setCatalog={setCatalog}
-      filterIsEmpty={filterIsEmpty}
+      filterAndSearchIsEmpty={filterAndSearchIsEmpty}
       loading={loading}
       error={error}
       applyFilter={applyFilter}

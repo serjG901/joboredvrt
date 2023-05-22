@@ -3,16 +3,16 @@
   height: 24px;
 }
 
-.star-icon svg {
+.star-icon {
   stroke: var(--color-gray-500);
 }
 
-.star-icon:hover svg {
+.star-icon:hover {
   stroke: var(--color-blue-500-main);
 }
 
-.star-icon-filled svg,
-.star-icon-filled:hover svg {
+.star-icon-filled,
+.star-icon-filled:hover {
   stroke: var(--color-blue-500-main);
   fill: var(--color-blue-500-main);
 }
