@@ -1,6 +1,7 @@
 import "./style.css";
-import TownPoint from "./town-point.svg";
-import Point from "./point.svg";
+import PointIcon from "../../atom/point-icon";
+import PointTownIcon from "../../atom/point-town-icon";
+
 
 interface IVacancyPageCardDescription {
   profession: string;
@@ -52,18 +53,14 @@ export default function VacancyPageCardDescription({
         <div className="vacancy-page-card-description-payment-and-typeofwork-payment">
           {payment}
         </div>
-        <div className="vacancy-page-card-description-payment-and-typeofwork-point">
-          <img src={Point} alt={"point"} />
-        </div>
+        <PointIcon />
         <div className="vacancy-page-card-description-payment-and-typeofwork-typeofwork">
           {type_of_workTitle}
         </div>
       </div>
 
       <div className="vacancy-page-card-description-town">
-        <div className="vacancy-page-card-description-town-point">
-          <img src={TownPoint} alt={"point"} />
-        </div>
+        <PointTownIcon />
         <div className="vacancy-page-card-description-town-title">
           {townTitle}
         </div>
