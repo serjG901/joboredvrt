@@ -1,6 +1,13 @@
 import "./style.css";
-import TownPoint from "./town-point.svg";
-import Point from "./point.svg";
+import PointIcon from "../../atom/point-icon";
+import PointTownIcon from "../../atom/point-town-icon";
+
+interface IPaymentTemplate {
+  payment: string;
+  from: string;
+  to: string;
+  empty: string;
+}
 
 interface ICardVacancyDescription {
   profession: string;
@@ -10,12 +17,32 @@ interface ICardVacancyDescription {
   currency: string;
   type_of_workTitle: string;
   townTitle: string;
-  paymentTemplate: {
-    payment: string;
-    from: string;
-    to: string;
-    empty: string;
-  };
+  paymentTemplate: IPaymentTemplate;
+}
+
+function paymentDescription(
+  payment_to: number,
+  payment_from: number,
+  currency: string,
+  paymentTemplate: IPaymentTemplate
+) {
+  const p_from =
+    payment_from && payment_to
+      ? payment_from
+      : payment_from
+      ? `${paymentTemplate.from} ${payment_from}`
+      : "";
+  const p_to =
+    payment_from && payment_to
+      ? `- ${payment_to}`
+      : payment_to
+      ? `${paymentTemplate.to} ${payment_to}`
+      : "";
+  const p = payment_from === payment_to ? payment_from : `${p_from} ${p_to}`;
+  const payment = `${paymentTemplate.payment} ${
+    p_from || p_to ? `${p} ${currency}` : paymentTemplate.empty
+  }`;
+  return payment;
 }
 
 export default function CardVacancyDescription({
@@ -28,21 +55,12 @@ export default function CardVacancyDescription({
   townTitle,
   paymentTemplate,
 }: ICardVacancyDescription) {
-  const p_from =
-    payment_from && payment_to
-      ? payment_from
-      : payment_from
-      ? `${paymentTemplate.from} ${payment_from}`
-      : "";
-  const p_to =
-    payment_from && payment_to
-      ? `- ${payment_to}`
-      : payment_to
-      ? payment_to
-      : "";
-  const payment = `${paymentTemplate.payment} ${
-    p_from || p_to ? `${p_from} ${p_to} ${currency}` : paymentTemplate.empty
-  }`;
+  const payment = paymentDescription(
+    payment_to,
+    payment_from,
+    currency,
+    paymentTemplate
+  );
   return (
     <div className="card-vacancy-description">
       <div className="card-vacancy-description-profession">{profession}</div>
@@ -50,17 +68,13 @@ export default function CardVacancyDescription({
         <div className="card-vacancy-description-payment-and-typeofwork-payment">
           {payment}
         </div>
-        <div className="card-vacancy-description-payment-and-typeofwork-point">
-          <img src={Point} alt={"point"} />
-        </div>
+        <PointIcon />
         <div className="card-vacancy-description-payment-and-typeofwork-typeofwork">
           {type_of_workTitle}
         </div>
       </div>
       <div className="card-vacancy-description-town">
-        <div className="card-vacancy-description-town-point">
-          <img src={TownPoint} alt={"point"} />
-        </div>
+        <PointTownIcon />
         <div className="card-vacancy-description-town-title">{townTitle}</div>
       </div>
       <div className="card-vacancy-description-town-firm">{firm_name}</div>
