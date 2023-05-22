@@ -1,7 +1,6 @@
 import "./style.css";
 import MyButton from "../../atom/my-button";
-import { useState } from "react";
-import StarSvg from "../../atom/star-svg";
+import StarSvg from "../../atom/star-icon";
 
 interface IStarFavorite {
   action: () => void;
@@ -16,9 +15,6 @@ export default function StarFavorite({
   altFavorite,
   dataElem,
 }: IStarFavorite) {
-  const [hover, setHover] = useState(false);
-  const handleMouseLeave = () => setHover(false);
-  const handleMouseOver = () => setHover(true);
   const actionWithPrevent = (event?: React.MouseEvent<HTMLButtonElement>) => {
     event?.preventDefault();
     action();
@@ -27,8 +23,6 @@ export default function StarFavorite({
     <div
       className={`star-favorite ${isFavorite ? "is-favorite" : ""}`}
       title={altFavorite}
-      onMouseOver={handleMouseOver}
-      onMouseLeave={handleMouseLeave}
     >
       <MyButton action={actionWithPrevent} dataElem={dataElem}>
         <StarSvg filled={isFavorite} />
