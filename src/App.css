@@ -42,19 +42,19 @@
     var(--subtitle-s--font-weight) var(--subtitle-s--font-size) /
     var(--subtitle-s--line-height) var(--subtitle-s--font-family);
 
-  --title-l--font-style: normal;
-  --title-l--font-weight: 700;
-  --title-l--font-size: 28px;
-  --title-l--line-height: 34px;
-  --title-l--font-family: var(--font-family-regular);
-  --font--title-l: var(--title-l--font-style) var(--title-l--font-weight)
-    var(--title-l--font-size) / var(--title-l--line-height)
-    var(--title-l--font-family);
+  --title-l-bold--font-style: normal;
+  --title-l-bold--font-weight: 700;
+  --title-l-bold--font-size: 28px;
+  --title-l-bold--line-height: 34px;
+  --title-l-bold--font-family: var(--font-family-regular);
+  --font--title-l-bold: var(--title-l-bold--font-style)
+    var(--title-l-bold--font-weight) var(--title-l-bold--font-size) /
+    var(--title-l-bold--line-height) var(--title-l-bold--font-family);
 
   --title-s-bold--font-style: normal;
   --title-s-bold--font-weight: 700;
   --title-s-bold--font-size: 20px;
-  --title-s-bold--line-height: 19px;
+  --title-s-bold--line-height: 20px;
   --title-s-bold--font-family: var(--font-family-regular);
   --font--title-s-bold: var(--title-s-bold--font-style)
     var(--title-s-bold--font-weight) var(--title-s-bold--font-size) /
@@ -69,10 +69,19 @@
     var(--title-s-semibold--font-weight) var(--title-s-semibold--font-size) /
     var(--title-s-semibold--line-height) var(--title-s-semibold--font-family);
 
+  --title-xs-semibold--font-style: normal;
+  --title-xs-semibold--font-weight: 600;
+  --title-xs-semibold--font-size: 16px;
+  --title-xs-semibold--line-height: 20px;
+  --title-xs-semibold--font-family: var(--font-family-regular);
+  --font--title-xs-semibold: var(--title-xs-semibold--font-style)
+    var(--title-xs-semibold--font-weight) var(--title-xs-semibold--font-size) /
+    var(--title-xs-semibold--line-height) var(--title-xs-semibold--font-family);
+
   --text-base-m-regular--font-style: normal;
   --text-base-m-regular--font-weight: 400;
   --text-base-m-regular--font-size: 16px;
-  --text-base-m-regular--line-height: 140%;
+  --text-base-m-regular--line-height: 20px;
   --text-base-m-regular--font-family: var(--font-family-regular);
   --font--text-base-m-regular: var(--text-base-m-regular--font-style)
     var(--text-base-m-regular--font-weight)
@@ -88,6 +97,17 @@
   --font--text-base-m-bold: var(--text-base-m-bold--font-style)
     var(--text-base-m-bold--font-weight) var(--text-base-m-bold--font-size) /
     var(--text-base-m-bold--line-height) var(--text-base-m-bold--font-family);
+
+  --text-base-l-regular--font-style: normal;
+  --text-base-l-regular--font-weight: 400;
+  --text-base-l-regular--font-size: 20px;
+  --text-base-l-regular--line-height: 20px;
+  --text-base-l-regular--font-family: var(--font-family-regular);
+  --font--text-base-l-regular: var(--text-base-l-regular--font-style)
+    var(--text-base-l-regular--font-weight)
+    var(--text-base-l-regular--font-size) /
+    var(--text-base-l-regular--line-height)
+    var(--text-base-l-regular--font-family);
 
   /*color styles*/
   --color-black: #232134;
@@ -131,11 +151,12 @@
   --gap-xxs: 8px;
   --gap-xs: 10px;
   --gap-s: 12px;
-  --gap-m: 20px;
-  --gap-l: 28px;
-  --gap-xl: 32px;
-  --gap-xxl: 40px;
-  --gap-xxxl: 60px;
+  --gap-m: 16px;
+  --gap-l: 20px;
+  --gap-xl: 28px;
+  --gap-xxl: 32px;
+  --gap-xxxl: 40px;
+  --gap-4xl: 60px;
 
   /*border*/
   --border-radius-s: 4px;
