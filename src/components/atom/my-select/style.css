@@ -17,7 +17,7 @@
   padding-inline: var(--padding-inline-m);
   padding-block: var(--padding-block-s);
   padding-right: 20px;
-  border: 1px solid #d5d6dc;
+  border: var(--my-select-default--border);
   border-radius: 8px;
   width: 100%;
   cursor: pointer;
@@ -68,6 +68,7 @@
 .my-select-select-error {
   cursor: auto;
   color: #9e3029;
+  border: var(--my-select-default--border) !important;
 }
 
 .my-select-select-loading {
