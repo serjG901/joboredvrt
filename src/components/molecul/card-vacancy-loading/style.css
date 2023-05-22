@@ -1,7 +1,7 @@
 .card-vacancy-loading div {
   animation: card-vacancy-loading 3s linear infinite;
   background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
-  min-height: 175px;
+  min-height: 170px;
 }
 
 .vacancy-page .card-vacancy-loading div {
@@ -11,10 +11,10 @@
 
 @keyframes card-vacancy-loading {
   from {
-    background-position-y: -175px;
+    background-position-y: -170px;
   }
   to {
-    background-position-y: 175px;
+    background-position-y: 170px;
   }
 }
 
