@@ -1,13 +1,13 @@
-.arrow-select {
+.arrow-select-icon {
   width: 24px;
   height: 24px;
   background-color: var(--color-white);
 }
 
-.arrow-select svg {
+.arrow-select-icon svg {
   stroke: var(--color-gray-500);
 }
 
-.arrow-select:hover svg {
+.arrow-select-icon:hover svg {
   stroke: var(--color-blue-500-main);
 }

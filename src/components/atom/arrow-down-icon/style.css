@@ -1,4 +1,4 @@
-.arrow-down {
+.arrow-down-icon {
   width: 20px;
   height: 14px;
   background-color: var(--color-white);
@@ -7,14 +7,14 @@
   justify-content: center;
 }
 
-.arrow-down svg {
+.arrow-down-icon svg {
   stroke: var(--color-gray-500);
 }
 
-.arrow-down:hover svg {
+.arrow-down-icon:hover svg {
   stroke: var(--color-blue-400);
 }
 
-.arrow-down:active svg {
+.arrow-down-icon:active svg {
   stroke: var(--color-blue-500-main);
 }
