@@ -137,6 +137,12 @@
   --padding-block-l: 20px;
   --padding-block-xl: 24px;
 
+  --padding-xs: 4px;
+  --padding-s: 8px;
+  --padding-m: 12px;
+  --padding-l: 20px;
+  --padding-xl: 24px;
+
   /*height*/
   --height-xxs: 12px;
   --height-xs: 16px;
@@ -168,6 +174,11 @@
 
   --border-style-regular: solid;
 
+  /*card-vacancy*/
+  --card-vacancy--border: var(--border-size-regular) var(--border-style-regular)
+    var(--color-gray-200);
+  --card-vacancy--padding: var(--padding-xl);
+  
   /*search*/
   --search--display: flex;
   --search--justify-content: space-between;
