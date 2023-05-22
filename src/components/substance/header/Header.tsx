@@ -4,7 +4,7 @@ import Navbar from "../../molecul/navbar";
 
 interface IHeader {
   projectName: string;
-  logo: string;
+  logo?: string;
   links: { text: string; href: string }[];
 }
 

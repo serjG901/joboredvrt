@@ -4,7 +4,7 @@ import ProjectLogo from "../../atom/project-logo";
 
 interface IProjectLogoName {
   projectName: string;
-  projectLogo: React.ReactNode;
+  projectLogo?: React.ReactNode;
 }
 
 export default function ProjectLogoName({
