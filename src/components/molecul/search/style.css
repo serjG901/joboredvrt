@@ -26,10 +26,6 @@
   background-color: var(--color-blue-600);
 }
 
-.search-icon {
-  display: inherit;
-}
-
 .search input {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   width: calc(100% - 83px);
