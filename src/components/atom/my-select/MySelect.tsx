@@ -1,6 +1,6 @@
 import "./style.css";
 import { useEffect, useState } from "react";
-import ArrowSelect from "../arrow-select";
+import ArrowSelectIcon from "../arrow-select-icon";
 interface ISelect {
   loading: boolean;
   loadingmessage: string;
@@ -78,7 +78,7 @@ export default function Select({
             : ""
         }`}
       >
-        <option value="" disabled selected>
+        <option value="" disabled>
           {placeholder}
         </option>
         {options.map((option) => {
@@ -96,7 +96,7 @@ export default function Select({
       <div
         className={`my-select-arrow ${isInFocus ? "my-select-arrow-up" : ""}`}
       >
-        <ArrowSelect />
+        <ArrowSelectIcon />
       </div>
     </div>
   );
