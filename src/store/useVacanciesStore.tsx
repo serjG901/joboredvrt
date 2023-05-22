@@ -180,15 +180,15 @@ interface VacanciesState {
   catalog: ICatalog | null;
   setCatalog: (catalog: string) => void;
 
-  filterIsEmpty: boolean;
-  setFilterIsEmpty: () => void;
+  filterAndSearchIsEmpty: boolean;
+  setFilterAndSearchIsEmpty: () => void;
 
   catalogues: ICatalog[];
   loadingCatalogues: boolean;
   errorCatalogues: unknown | null;
   getCatalogues: () => void;
   applyFilter: () => void;
-  resetFilter: () => void;
+  resetFilterAndSearch: () => void;
 
   favoriteVacanciesIds: number[];
   addFavoriteVacancyId: (id: number) => void;
@@ -281,19 +281,19 @@ const useVacanciesStore = create<VacanciesState>()(
       keyword: "",
       setKeyword: (keyword) => {
         set({ keyword });
-        get().setFilterIsEmpty();
+        get().setFilterAndSearchIsEmpty();
       },
 
       payment_from: 0,
       setPayment_from: (payment_from) => {
         set({ payment_from: +payment_from });
-        get().setFilterIsEmpty();
+        get().setFilterAndSearchIsEmpty();
       },
 
       payment_to: 0,
       setPayment_to: (payment_to) => {
         set({ payment_to: +payment_to });
-        get().setFilterIsEmpty();
+        get().setFilterAndSearchIsEmpty();
       },
 
       order: "date",
@@ -305,14 +305,14 @@ const useVacanciesStore = create<VacanciesState>()(
             (item: ICatalog) => item.title_trimmed === title_trimmed
           ),
         });
-        get().setFilterIsEmpty();
+        get().setFilterAndSearchIsEmpty();
       },
 
-      filterIsEmpty: true,
+      filterAndSearchIsEmpty: true,
 
-      setFilterIsEmpty: () =>
+      setFilterAndSearchIsEmpty: () =>
         set({
-          filterIsEmpty: !(
+          filterAndSearchIsEmpty: !(
             get().keyword ||
             get().catalog ||
             get().payment_from ||
@@ -325,19 +325,23 @@ const useVacanciesStore = create<VacanciesState>()(
       errorCatalogues: null,
       applyFilter: () => {
         if (get().errorCatalogues) return;
-        console.log(get().keyword, get().filterIsEmpty, get().vacancies);
-        if (get().filterIsEmpty && get().vacancies.length) return;
+        console.log(
+          get().keyword,
+          get().filterAndSearchIsEmpty,
+          get().vacancies
+        );
+        if (get().filterAndSearchIsEmpty && get().vacancies.length) return;
         set({ pageActive: 0 });
         get().getVacancies();
       },
-      resetFilter: () => {
+      resetFilterAndSearch: () => {
         set({
           keyword: "",
           payment_from: 0,
           payment_to: 0,
           catalog: null,
         });
-        get().setFilterIsEmpty();
+        get().setFilterAndSearchIsEmpty();
         get().getVacancies();
       },
       getCatalogues: async () => {
