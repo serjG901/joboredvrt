@@ -9,7 +9,7 @@ import VacancyPage from "./routes/vacancy-page";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/joboredvrt",
     element: <MainPage />,
     errorElement: <Error404Page />,
     children: [
