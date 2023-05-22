@@ -178,7 +178,7 @@
   --card-vacancy--border: var(--border-size-regular) var(--border-style-regular)
     var(--color-gray-200);
   --card-vacancy--padding: var(--padding-xl);
-  
+
   /*search*/
   --search--display: flex;
   --search--justify-content: space-between;
