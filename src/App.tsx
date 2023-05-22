@@ -1,13 +1,13 @@
 import "./App.css";
 import ErrorBoundary from "./components/substance/errorboundary";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./routes/main-page";
 import Error404Page from "./routes/error-404-page";
 import VacanciesPage from "./routes/vacancies-page";
 import FavoritesPage from "./routes/favorites-page";
 import VacancyPage from "./routes/vacancy-page";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <MainPage />,
