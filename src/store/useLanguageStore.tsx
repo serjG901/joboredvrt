@@ -37,6 +37,11 @@ interface IText {
     to: string;
     empty: string;
   };
+  paginateTitle: {
+    previous: string;
+    page: string;
+    next: string;
+  };
 }
 
 interface ITextes {
@@ -95,12 +100,17 @@ const textes: ITextes = {
       to: "до",
       empty: "не указана",
     },
+    paginateTitle: {
+      previous: "Предыдущая страница",
+      page: "страница",
+      next: "Следующая страница",
+    },
   },
 };
 
 const useLanguageStore = create<LanguageState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       currentLanguage: "ru",
       textes: textes["ru"],
       setCurentLanguage: (lang) =>
