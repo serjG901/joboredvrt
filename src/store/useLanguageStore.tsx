@@ -19,6 +19,8 @@ interface IText {
     buttontext: string;
     loadingmessage: string;
     errormessage: string;
+    showFilter: string;
+    hideFilter: string;
   };
   searchvacancies: {
     placeholder: string;
@@ -69,6 +71,8 @@ const textes: ITextes = {
       buttontext: "Применить",
       loadingmessage: "Загружаем данные...",
       errormessage: "Ошибка загрузки...",
+      showFilter: "Показать фильтр",
+      hideFilter: "Спрятать фильтр",
     },
     searchvacancies: {
       placeholder: "Введите название вакансии",
