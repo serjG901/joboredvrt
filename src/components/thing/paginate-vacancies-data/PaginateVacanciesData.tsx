@@ -1,3 +1,4 @@
+import useLanguageStore from "../../../store/useLanguageStore";
 import useVacanciesStore from "../../../store/useVacanciesStore";
 import Paginate from "../../substance/paginate";
 import LeftArrow from "./chevron-left.svg";
@@ -24,6 +25,8 @@ export default function PaginateVacanciesData() {
     state.totalVacancies,
   ]);
 
+  const paginateTitle = useLanguageStore((state) => state.textes.paginateTitle);
+  console.log(paginateTitle);
   if (errorVacancies) return null;
   return (
     <Paginate
@@ -33,9 +36,10 @@ export default function PaginateVacanciesData() {
       totalItems={totalVacancies}
       setPreviousPage={setPreviousPage}
       setNextPage={setNextPage}
-      imagePreviousPage={LeftArrow}
-      imageNextPage={RightArrow}
       loadingVacancies={loadingVacancies}
+      paginateTitlePrevious={paginateTitle.previous}
+      paginateTitlePage={paginateTitle.page}
+      paginateTitleNext={paginateTitle.next}
     />
   );
 }

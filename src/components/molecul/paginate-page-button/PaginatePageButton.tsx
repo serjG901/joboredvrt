@@ -1,13 +1,14 @@
-import MyButton from "../../atom/my-button";
-import MyImage from "../../atom/my-image";
 import "./style.css";
+import ArrowRightIcon from "../../atom/arrow-right-icon";
+import ArrowLeftIcon from "../../atom/arrow-left-icon/";
+import MyButton from "../../atom/my-button";
 
 interface IPaginatePageButton {
   pageNumber?: string | number;
   action: () => void;
   pageActive?: number | number;
-  imageSrc?: string;
-  altPrevious?: string;
+  direction?: "left" | "right";
+  title: string;
   disabled?: boolean;
 }
 
@@ -15,8 +16,8 @@ export default function PaginatePageButton({
   pageNumber = "",
   action,
   pageActive,
-  imageSrc,
-  altPrevious,
+  direction,
+  title,
   disabled,
 }: IPaginatePageButton) {
   return (
@@ -27,8 +28,18 @@ export default function PaginatePageButton({
           : ""
       } ${disabled ? "paginate-page-button_disabled" : ""}`}
     >
-      <MyButton action={action} disabled={disabled || (!!pageActive && pageActive === pageNumber)}>
-        {pageNumber || <MyImage src={imageSrc} alt={altPrevious} />}
+      <MyButton
+        title={disabled ? "" : direction ? title : `${pageNumber} ${title}`}
+        action={action}
+        disabled={disabled || (!!pageActive && pageActive === pageNumber)}
+      >
+        {!direction ? (
+          pageNumber
+        ) : direction === "left" ? (
+          <ArrowLeftIcon />
+        ) : (
+          <ArrowRightIcon />
+        )}
       </MyButton>
     </div>
   );

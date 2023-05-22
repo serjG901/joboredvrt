@@ -1,7 +1,6 @@
+import useLanguageStore from "../../../store/useLanguageStore";
 import useVacanciesStore from "../../../store/useVacanciesStore";
 import Paginate from "../../substance/paginate";
-import LeftArrow from "./chevron-left.svg";
-import RightArrow from "./chevron-right.svg";
 
 export default function PaginateFavoriteVacanciesData() {
   const [
@@ -24,8 +23,9 @@ export default function PaginateFavoriteVacanciesData() {
     state.totalFavoriteVacancies,
   ]);
 
-  console.log(pageActive,
-    itemsPerPage,totalVacancies);
+  const paginateTitle = useLanguageStore((state) => state.textes.paginateTitle);
+
+  console.log(pageActive, itemsPerPage, totalVacancies);
 
   if (errorVacancies) return null;
   return (
@@ -36,9 +36,10 @@ export default function PaginateFavoriteVacanciesData() {
       totalItems={totalVacancies}
       setPreviousPage={setPreviousPage}
       setNextPage={setNextPage}
-      imagePreviousPage={LeftArrow}
-      imageNextPage={RightArrow}
       loadingVacancies={loadingVacancies}
+      paginateTitlePrevious={paginateTitle.previous}
+      paginateTitlePage={paginateTitle.page}
+      paginateTitleNext={paginateTitle.next}
     />
   );
 }

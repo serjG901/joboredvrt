@@ -9,26 +9,16 @@ interface IPaginate {
   setPageActive: (value: number) => void;
   setPreviousPage: () => void;
   setNextPage: () => void;
-  imagePreviousPage: string;
-  imageNextPage: string;
   loadingVacancies: boolean;
+  paginateTitlePrevious: string;
+  paginateTitlePage: string;
+  paginateTitleNext: string;
 }
 
-export default function Paginate({
-  totalItems,
-  pageActive,
-  itemsPerPage,
-  setPageActive,
-  setPreviousPage,
-  setNextPage,
-  imagePreviousPage,
-  imageNextPage,
-  loadingVacancies,
-}: IPaginate) {
-  const pages = Math.ceil(totalItems / itemsPerPage);
-  const pageActiveRender = pageActive + 1;
-  if (pages <= 1) return null;
-
+function calculatePagination(
+  pageActiveRender: number,
+  pages: number
+): (number | string)[] {
   let renderPages: (number | string)[] = [];
   switch (pageActiveRender) {
     case 1:
@@ -72,12 +62,31 @@ export default function Paginate({
         ],
       ][pages - pageActiveRender > 3 ? 3 : pages - pageActiveRender];
   }
+  return renderPages;
+}
 
+export default function Paginate({
+  totalItems,
+  pageActive,
+  itemsPerPage,
+  setPageActive,
+  setPreviousPage,
+  setNextPage,
+  loadingVacancies,
+  paginateTitlePrevious,
+  paginateTitlePage,
+  paginateTitleNext,
+}: IPaginate) {
+  const pages = Math.ceil(totalItems / itemsPerPage);
+  if (pages <= 1) return null;
+  const pageActiveRender = pageActive + 1;
+  const renderPages = calculatePagination(pageActiveRender, pages);
   return (
     <div className="paginate">
       <PaginatePageButton
         action={setPreviousPage}
-        imageSrc={imagePreviousPage}
+        direction="left"
+        title={paginateTitlePrevious}
         disabled={loadingVacancies || pageActiveRender === 1}
       />
       {renderPages.map((pageNumber: number | string, index) => {
@@ -90,13 +99,15 @@ export default function Paginate({
               pageNumber={pageNumber}
               action={() => setPageActive(pageNumber - 1)}
               pageActive={pageActiveRender}
+              title={paginateTitlePage}
               disabled={loadingVacancies}
             />
           );
       })}
       <PaginatePageButton
         action={setNextPage}
-        imageSrc={imageNextPage}
+        direction="right"
+        title={paginateTitleNext}
         disabled={loadingVacancies || pageActiveRender === pages}
       />
     </div>
