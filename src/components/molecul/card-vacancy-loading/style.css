@@ -1,14 +1,29 @@
 .card-vacancy-loading div {
   animation: card-vacancy-loading 3s linear infinite;
   background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+  min-height: 175px;
+}
+
+.vacancy-page .card-vacancy-loading div {
+  animation: vacancy-page-card-loading 3s linear infinite;
+  min-height: 192px;
 }
 
 @keyframes card-vacancy-loading {
   from {
-    background-position-y: -137px;
+    background-position-y: -175px;
   }
   to {
-    background-position-y: 137px;
+    background-position-y: 175px;
+  }
+}
+
+@keyframes vacancy-page-card-loading {
+  from {
+    background-position-y: -192px;
+  }
+  to {
+    background-position-y: 192px;
   }
 }
 

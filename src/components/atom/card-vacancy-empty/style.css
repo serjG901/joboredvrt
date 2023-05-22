@@ -4,10 +4,10 @@ a:has(.card-vacancy-empty) {
 .card-vacancy-empty {
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  padding: var(--card-vacancy--padding);
   width: 100%;
-  min-height: 175px;
-  background-color: #ffffff;
-  border: 1px solid #eaebed;
-  border-radius: 12px;
+  background-color: var(--color-white);
+  border: var(--card-vacancy--border);
+  border-radius: var(--border-radius-l);
+  gap: var(--gap-xxs);
 }

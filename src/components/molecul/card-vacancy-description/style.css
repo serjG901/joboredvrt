@@ -2,14 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--gap-s);
+  gap: var(--gap-m);
   color: var(--color-black);
   -webkit-hyphens: auto;
   hyphens: auto;
   text-align: left;
 }
 
+a .card-vacancy-description {
+  gap: var(--gap-s);
+}
+
 .card-vacancy-description-profession {
+  font: var(--font--title-l-bold);
+}
+
+a .card-vacancy-description-profession {
   font: var(--font--title-s-semibold);
   color: #5e96fc;
 }
@@ -21,17 +29,25 @@
 }
 
 .card-vacancy-description-payment-and-typeofwork-payment {
+  font: var(--font--title-s-bold);
+}
+
+a .card-vacancy-description-payment-and-typeofwork-payment {
   font: var(--font--title-xs-semibold);
 }
 
 .card-vacancy-description-payment-and-typeofwork-typeofwork {
+  font: var(--font--text-base-l-regular);
+}
+
+a .card-vacancy-description-payment-and-typeofwork-typeofwork {
   font: var(--font--text-base-m-regular);
 }
 
 .card-vacancy-description-town {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--gap-xxs);
 }
 
 .card-vacancy-description-town-title {
@@ -41,5 +57,9 @@
 .card-vacancy-description-firm {
   display: flex;
   align-items: center;
+  font: var(--font--text-base-l-regular);
+}
+
+a .card-vacancy-description-firm {
   font: var(--font--text-base-m-regular);
 }

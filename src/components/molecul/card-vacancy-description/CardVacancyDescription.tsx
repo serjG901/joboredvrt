@@ -77,7 +77,7 @@ export default function CardVacancyDescription({
         <PointTownIcon />
         <div className="card-vacancy-description-town-title">{townTitle}</div>
       </div>
-      <div className="card-vacancy-description-town-firm">{firm_name}</div>
+      <div className="card-vacancy-description-firm">{firm_name}</div>
     </div>
   );
 }

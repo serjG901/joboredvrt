@@ -1,7 +1,8 @@
 import "./style.css";
-import EmptyFavorites from "../../components/thing/empty-favorites-data";
-import useVacanciesStore, { IVacancy } from "../../store/useVacanciesStore";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import useVacanciesStore, { IVacancy } from "../../store/useVacanciesStore";
+import EmptyFavorites from "../../components/thing/empty-favorites-data";
 import CardsVacancyLoadingData from "../../components/thing/cards-vacancy-loading-data";
 import ErrorSearchData from "../../components/thing/error-search-data";
 import CardVacancyData from "../../components/thing/card-vacancy-data";
@@ -32,7 +33,13 @@ export default function Favorites() {
           <>
             {vacancies.length ? (
               vacancies.map((vacancy: IVacancy) => (
-                <CardVacancyData key={vacancy.id} vacancy={vacancy} />
+                <Link
+                  to={`../vacancies/${vacancy.id}`}
+                  data-elem={`vacancy-${vacancy.id}`}
+                  key={vacancy.id}
+                >
+                  <CardVacancyData vacancy={vacancy} />
+                </Link>
               ))
             ) : (
               <EmptyFavorites />

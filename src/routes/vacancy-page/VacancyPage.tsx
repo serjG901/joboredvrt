@@ -4,8 +4,8 @@ import useVacanciesStore from "../../store/useVacanciesStore";
 import { useEffect } from "react";
 import ErrorSearchData from "../../components/thing/error-search-data";
 import EmptySearchData from "../../components/thing/empty-search-data";
-import VacancyPageCardData from "../../components/thing/vacancy-page-card-data";
 import VacancyPageCardLoadingData from "../../components/thing/vacancy-page-card-loading-data";
+import CardVacancyData from "../../components/thing/card-vacancy-data";
 
 export default function VacancyPage() {
   const { id } = useParams<"id">();
@@ -31,7 +31,7 @@ export default function VacancyPage() {
         <div className="vacancy-page-card">
           {vacancyPage ? (
             <>
-              <VacancyPageCardData key={vacancyPage.id} vacancy={vacancyPage} />
+              <CardVacancyData key={vacancyPage.id} vacancy={vacancyPage} />
               <div
                 className="vacancy-page-card-rich"
                 dangerouslySetInnerHTML={{

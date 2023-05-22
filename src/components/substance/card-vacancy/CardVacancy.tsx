@@ -1,7 +1,6 @@
 import CardVacancyEmpty from "../../atom/card-vacancy-empty";
 import StarFavorite from "../../molecul/star-favorite";
 import CardVacancyDescription from "../../molecul/card-vacancy-description";
-import { Link } from "react-router-dom";
 
 interface ICardVacancy {
   vacancyId: number;
@@ -38,25 +37,23 @@ export default function CardVacancy({
   altFavorite,
 }: ICardVacancy) {
   return (
-    <Link to={`../vacancies/${vacancyId}`} data-elem={`vacancy-${vacancyId}`}>
-      <CardVacancyEmpty>
-        <CardVacancyDescription
-          profession={profession}
-          firm_name={firm_name}
-          payment_from={payment_from}
-          payment_to={payment_to}
-          currency={currency}
-          type_of_workTitle={type_of_workTitle}
-          townTitle={townTitle}
-          paymentTemplate={paymentTemplate}
-        />
-        <StarFavorite
-          isFavorite={isFavorite}
-          action={actionFavoriteStar}
-          altFavorite={altFavorite}
-          dataElem={`vacancy-${vacancyId}-shortlist-button`}
-        />
-      </CardVacancyEmpty>
-    </Link>
+    <CardVacancyEmpty>
+      <CardVacancyDescription
+        profession={profession}
+        firm_name={firm_name}
+        payment_from={payment_from}
+        payment_to={payment_to}
+        currency={currency}
+        type_of_workTitle={type_of_workTitle}
+        townTitle={townTitle}
+        paymentTemplate={paymentTemplate}
+      />
+      <StarFavorite
+        isFavorite={isFavorite}
+        action={actionFavoriteStar}
+        altFavorite={altFavorite}
+        dataElem={`vacancy-${vacancyId}-shortlist-button`}
+      />
+    </CardVacancyEmpty>
   );
 }
