@@ -217,11 +217,11 @@ const useVacanciesStore = create<VacanciesState>()(
   persist(
     (set, get) => ({
       vacancies: [],
-      loadingVacancies: false,
+      loadingVacancies: true,
       errorVacancies: null,
       getVacancies: async () => {
-        set({ errorVacancies: null });
         set({ loadingVacancies: true });
+        set({ errorVacancies: null });
         set({ vacancies: [] });
         const keyword = get().keyword;
         const payment_from = get().payment_from;
@@ -325,8 +325,8 @@ const useVacanciesStore = create<VacanciesState>()(
       errorCatalogues: null,
       applyFilter: () => {
         if (get().errorCatalogues) return;
-        console.log(get().keyword, get().filterIsEmpty);
-        if (get().filterIsEmpty) return;
+        console.log(get().keyword, get().filterIsEmpty, get().vacancies);
+        if (get().filterIsEmpty && get().vacancies.length) return;
         set({ pageActive: 0 });
         get().getVacancies();
       },
@@ -340,10 +340,9 @@ const useVacanciesStore = create<VacanciesState>()(
         get().setFilterIsEmpty();
         get().getVacancies();
       },
-
       getCatalogues: async () => {
-        set({ errorCatalogues: null });
         set({ loadingCatalogues: true });
+        set({ errorCatalogues: null });
         set({ catalogues: [] });
         try {
           const res = (await fetchCatalogues()) as ICatalog[];
@@ -367,11 +366,11 @@ const useVacanciesStore = create<VacanciesState>()(
         })),
 
       favoriteVacancies: [],
-      loadingFavoriteVacancies: false,
+      loadingFavoriteVacancies: true,
       errorFavoriteVacancies: null,
       getFavoriteVacancies: async () => {
-        set({ errorFavoriteVacancies: null });
         set({ loadingFavoriteVacancies: true });
+        set({ errorFavoriteVacancies: null });
         set({ favoriteVacancies: [] });
         const ids = get().favoriteVacanciesIds;
         if (!ids.length) {
@@ -431,18 +430,23 @@ const useVacanciesStore = create<VacanciesState>()(
       },
 
       vacancyPage: null,
-      loadingVacancyPage: false,
+      loadingVacancyPage: true,
       cardsInVacancyPage: 2,
       errorVacancyPage: null,
       getVacancyPageById: async (id) => {
-        if (!id) set({ errorVacancyPage: "not found" });
-        set({ vacancyPage: null });
+        if (!id) throw new Error(`Can't find vacancy by ${id}`);
         set({ loadingVacancyPage: true });
+        set({ vacancyPage: null });
         set({ errorVacancyPage: null });
         try {
           const res = (await fetchVacancyById(id)) as IVacancy;
-          set({ vacancyPage: res });
+          if (!res.id) {
+            set({ vacancyPage: null });
+          } else {
+            set({ vacancyPage: res });
+          }
         } catch (error) {
+          console.log("getVacancyPageById:", error);
           set({ errorVacancyPage: error });
         }
         set({ loadingVacancyPage: false });
