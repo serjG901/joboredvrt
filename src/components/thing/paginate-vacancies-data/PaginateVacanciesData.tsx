@@ -1,8 +1,6 @@
 import useLanguageStore from "../../../store/useLanguageStore";
 import useVacanciesStore from "../../../store/useVacanciesStore";
 import Paginate from "../../substance/paginate";
-import LeftArrow from "./chevron-left.svg";
-import RightArrow from "./chevron-right.svg";
 
 export default function PaginateVacanciesData() {
   const [

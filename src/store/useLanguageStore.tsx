@@ -110,7 +110,7 @@ const textes: ITextes = {
 
 const useLanguageStore = create<LanguageState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       currentLanguage: "ru",
       textes: textes["ru"],
       setCurentLanguage: (lang) =>

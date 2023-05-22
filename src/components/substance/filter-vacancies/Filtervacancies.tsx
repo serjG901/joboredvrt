@@ -3,7 +3,6 @@ import { useState } from "react";
 import MySelect from "../../atom/my-select";
 import FormSalary from "../../molecul/form-salary";
 import ButtonApplyFilter from "../../molecul/button-apply-filter";
-import MyButton from "../../atom/my-button";
 import ResetFilterAndSearch from "../../molecul/reset-filter-and-search";
 import HideFilter from "../../molecul/hide-filter";
 
