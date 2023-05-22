@@ -3,7 +3,7 @@ import "./style.css";
 export default function Error404Svg() {
   return (
     <div className="error-404-svg">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445.76 177.43">
+      <svg viewBox="0 0 445.76 177.43">
         <title>404 error</title>
         <g>
           <path

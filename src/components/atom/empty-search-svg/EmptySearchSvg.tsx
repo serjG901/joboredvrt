@@ -6,7 +6,6 @@ export default function EmprtySearchSvg() {
         height="231"
         viewBox="0 0 241 231"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
       >
         <g clip-path="url(#clip0_72_799)">
           <path
