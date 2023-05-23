@@ -262,7 +262,7 @@ const useVacanciesStore = create<VacanciesState>()(
       },
       setPreviousPage: () => {
         const page = get().pageActive;
-        if (page > 1) {
+        if (page > 0) {
           set({ pageActive: get().pageActive - 1 });
           console.log(get().pageActive);
           get().getVacancies();
