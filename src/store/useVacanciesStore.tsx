@@ -341,6 +341,7 @@ const useVacanciesStore = create<VacanciesState>()(
           payment_to: 0,
           catalog: null,
         });
+        set({ pageActive: 0 });
         get().setFilterAndSearchIsEmpty();
         get().getVacancies();
       },
