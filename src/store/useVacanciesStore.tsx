@@ -413,7 +413,7 @@ const useVacanciesStore = create<VacanciesState>()(
       },
       setPreviousPageFavoriteVacancies: () => {
         const page = get().pageActiveFavoriteVacancies;
-        if (page > 1) {
+        if (page > 0) {
           set({
             pageActiveFavoriteVacancies: get().pageActiveFavoriteVacancies - 1,
           });
