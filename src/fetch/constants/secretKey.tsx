@@ -1,3 +1,3 @@
-const secretKey = import.meta.env.FETCH_CONSTANTS_SECRET_KEY;
+const secretKey = "GEU4nvd3rej*jeh.eqp";
 
 export default secretKey;
