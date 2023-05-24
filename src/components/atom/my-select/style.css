@@ -59,6 +59,7 @@
   background-color: transparent;
   padding-right: 10px;
   pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .my-select-arrow-up {
