@@ -42,6 +42,10 @@
   display: none;
 }
 
+.vacancy-page-card-rich br:first-child > br {
+  display: none;
+}
+/*
 .vacancy-page-card-rich p:first-child {
   margin-block-start: 0;
-}
+}*/
