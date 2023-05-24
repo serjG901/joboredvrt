@@ -11,8 +11,23 @@
   stroke: var(--color-blue-500-main);
 }
 
-.star-icon-filled,
-.star-icon-filled:hover {
+.my-button:has(.star-icon):focus .star-icon{
+  stroke: var(--color-blue-500-main);
+}
+
+.my-button:has(.star-icon):focus {
+  filter: none;
+}
+
+.star-icon-filled{
   stroke: var(--color-blue-500-main);
   fill: var(--color-blue-500-main);
+}
+
+.star-icon-filled:hover {
+  stroke: var(--color-gray-500);
+}
+
+.my-button:has(.star-icon-filled):focus .star-icon-filled{
+  stroke: var(--color-gray-500);
 }

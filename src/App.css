@@ -177,6 +177,9 @@
   /*card-vacancy*/
   --card-vacancy--border: var(--border-size-regular) var(--border-style-regular)
     var(--color-gray-200);
+  --card-vacancy--border-focus: var(--border-size-regular)
+    var(--border-style-regular) var(--color-blue-500-main);
+
   --card-vacancy--padding: var(--padding-xl);
 
   /*search*/
@@ -271,6 +274,8 @@
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-synthesis: none;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 /*
@@ -280,12 +285,12 @@
   }
 }*/
 
+
 * {
   box-sizing: border-box;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 a {
-  display: contents;
   width: inherit;
 }

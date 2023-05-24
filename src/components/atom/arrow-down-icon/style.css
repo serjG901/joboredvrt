@@ -1,6 +1,6 @@
 .arrow-down-icon {
-  width: 20px;
-  height: 14px;
+  width: 28px;
+  height: 12px;
   background-color: var(--color-white);
   display: flex;
   align-items: center;
@@ -13,6 +13,14 @@
 
 .arrow-down-icon:hover svg {
   stroke: var(--color-blue-400);
+}
+
+.my-button:has(.arrow-down-icon):focus svg {
+  stroke: var(--color-blue-400);
+}
+
+.my-button:has(.arrow-down-icon) {
+  filter: none;
 }
 
 .arrow-down-icon:active svg {

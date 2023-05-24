@@ -8,6 +8,10 @@
   stroke: var(--color-gray-500);
 }
 
-.arrow-select-icon:hover svg {
+.my-select:hover .arrow-select-icon svg {
+  stroke: var(--color-blue-500-main);
+}
+
+.my-select:has(.arrow-select-icon):has(select:focus) svg {
   stroke: var(--color-blue-500-main);
 }

@@ -1,22 +1,29 @@
 .my-link {
   height: 20px;
-
   font-family: "Inter";
   font-style: normal;
   font-size: 16px;
   line-height: 20px;
-
   display: flex;
   align-items: center;
 }
+
 .my-link a {
   font-weight: 400;
   color: var(--color-black);
   text-decoration: inherit;
 }
+
+.my-link a:focus {
+  outline: none;
+  filter: drop-shadow(0px 4px 4px var(--color-gray-300));
+}
+
 .my-link a:hover {
   color: var(--color-black);
+  cursor: pointer;
 }
+
 .my-link a:active {
   font-weight: 500;
   color: var(--color-blue-500-main);
@@ -25,4 +32,5 @@
 .my-link a.my-link_active {
   font-weight: 500;
   color: var(--color-blue-500-main);
+  filter: none;
 }

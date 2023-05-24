@@ -1,6 +1,6 @@
 .arrow-up-icon {
-    width: 20px;
-    height: 14px;
+    width: 28px;
+    height: 12px;
     background-color: var(--color-white);
     display: flex;
     align-items: center;
@@ -13,6 +13,14 @@
 
 .arrow-up-icon:hover svg {
   stroke: var(--color-blue-400);
+}
+
+.my-button:has(.arrow-up-icon):focus svg {
+  stroke: var(--color-blue-400);
+}
+
+.my-button:has(.arrow-up-icon) {
+  filter: none;
 }
 
 .arrow-up-icon:active svg {

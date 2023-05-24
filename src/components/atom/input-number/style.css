@@ -13,6 +13,7 @@
 .input-number input {
   font: var(--font--subtitle-s);
   width: 100%;
+  height: 100%;
   padding-inline: var(--padding-inline-m);
   padding-block: var(--padding-block-s);
   border-radius: 8px;
@@ -28,11 +29,12 @@
 
 .input-number-arrows {
   position: absolute;
-  top: 5px;
-  right: 8px;
+  top: 6px;
+  right: 3px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
+  gap: 2px;
   background-color: var(--color-white);
 }
 
@@ -40,7 +42,7 @@
   border: var(--my-select-hover--border);
 }
 
-.input-number:focus {
+.input-number:has(input:focus) {
   border: var(--my-select-focus--border);
 }
 

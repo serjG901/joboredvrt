@@ -9,6 +9,14 @@
   fill: var(--color-blue-400);
 }
 
+.hide-filter .my-button:focus svg {
+  fill: var(--color-blue-400);
+}
+
+.hide-filter .my-button:focus {
+  filter: none;
+}
+
 .hide-filter:active svg {
   fill: var(--color-blue-600);
 }

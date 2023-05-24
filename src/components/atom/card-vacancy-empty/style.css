@@ -1,6 +1,3 @@
-a:has(.card-vacancy-empty) {
-  text-decoration: none;
-}
 .card-vacancy-empty {
   display: flex;
   justify-content: space-between;
@@ -10,4 +7,13 @@ a:has(.card-vacancy-empty) {
   border: var(--card-vacancy--border);
   border-radius: var(--border-radius-l);
   gap: var(--gap-xxs);
+}
+
+a:has(.card-vacancy-empty) {
+  text-decoration: none;
+  outline: none;
+}
+
+a:has(.card-vacancy-empty):focus .card-vacancy-empty {
+  border: var(--card-vacancy--border-focus);
 }
