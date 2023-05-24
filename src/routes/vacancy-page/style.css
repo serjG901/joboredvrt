@@ -26,6 +26,8 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .vacancy-page-card-rich p {
