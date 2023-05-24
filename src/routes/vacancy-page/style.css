@@ -38,11 +38,11 @@
   font-size: 20px;
   line-height: 20px;
 }
-.vacancy-page-card-rich br:first-child {
+.vacancy-page-card-rich > br {
   display: none;
 }
 
-.vacancy-page-card-rich br:first-child > br {
+.vacancy-page-card-rich > br > br {
   display: none;
 }
 /*
