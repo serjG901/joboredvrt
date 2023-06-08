@@ -31,7 +31,7 @@ export default function MainPage() {
         />
       )}
       <Headerdata />
-      <div className="outlet">{haveToken !== "fetch token" && <Outlet />}</div>
+      <div className="outlet">{haveToken !== "fetch token" ? <Outlet /> : "Loading..."}</div>
       <div></div>
     </div>
   );
