@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 import getToken from "../../fetch/helpers/getToken";
 import Headerdata from "../../components/thing/header-data";
-import LoadingDots from "../../components/atom/loading-dots/LoadingDots";
+import LoadingDots from "../../components/atom/loading-dots";
 
 export default function MainPage() {
   const [haveToken, setHaveToken] = useState<
