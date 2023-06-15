@@ -1,8 +1,9 @@
 import "./style.css";
-import { Outlet, Navigate, useLocation } from "react-router-dom";
-import Headerdata from "../../components/thing/header-data";
-import getToken from "../../fetch/helpers/getToken";
 import { useEffect, useState } from "react";
+import { Outlet, Navigate, useLocation } from "react-router-dom";
+import getToken from "../../fetch/helpers/getToken";
+import Headerdata from "../../components/thing/header-data";
+import LoadingDots from "../../components/atom/loading-dots/LoadingDots";
 
 export default function MainPage() {
   const [haveToken, setHaveToken] = useState<
@@ -31,7 +32,13 @@ export default function MainPage() {
         />
       )}
       <Headerdata />
-      <div className="outlet">{haveToken !== "fetch token" ? <Outlet /> : "Loading..."}</div>
+      <div className="outlet">
+        {haveToken !== "fetch token" ? (
+          <Outlet />
+        ) : (
+          <LoadingDots>Loading</LoadingDots>
+        )}
+      </div>
       <div></div>
     </div>
   );
