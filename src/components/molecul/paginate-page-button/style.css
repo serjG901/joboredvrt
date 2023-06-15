@@ -1,3 +1,7 @@
+.paginate-page-button {
+  display: contents;
+}
+
 .paginate-page-button button {
   font: var(--font--text-paginate);
   box-sizing: border-box;
