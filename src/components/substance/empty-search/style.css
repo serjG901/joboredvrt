@@ -20,15 +20,9 @@
   justify-content: center;
   align-items: center;
   padding: 10px 24px;
-  width: 164px;
-  height: 42px;
   background: var(--color-blue-100);
-  border-radius: 8px;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 155%;
+  border-radius: var(--border-radius-m);
+  font: var(--font--text-link-button);
   color: var(--color-blue-600);
   cursor: pointer;
   text-decoration: none;
