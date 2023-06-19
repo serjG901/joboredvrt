@@ -384,7 +384,7 @@ const useVacanciesStore = create<VacanciesState>()(
         }
         const count = get().itemsPerPageFavoriteVacancies;
         const pageState = get().pageActiveFavoriteVacancies;
-        const maxPages = Math.trunc(ids.length / count) - 1;
+        const maxPages = Math.ceil(ids.length / count) - 1;
         const page = maxPages < pageState ? maxPages : pageState;
         console.log("page:", page, ":max", maxPages);
         try {
