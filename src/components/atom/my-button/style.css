@@ -14,9 +14,4 @@
 
 .my-button:focus {
   outline: none;
-  filter: drop-shadow(0px 4px 4px var(--color-gray-300));
-}
-
-button:disabled img {
-  opacity: 0.3;
 }
