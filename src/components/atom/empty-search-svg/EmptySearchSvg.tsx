@@ -7,7 +7,7 @@ export default function EmprtySearchSvg() {
         viewBox="0 0 241 231"
         fill="none"
       >
-        <g clip-path="url(#clip0_72_799)">
+        <g clipPath="url(#clip0_72_799)">
           <path
             d="M63.1711 59.4975L96.6833 111.201L98.7886 110.344L65.2208 58.7478L63.1711 59.4975Z"
             fill="#3B7CD3"
